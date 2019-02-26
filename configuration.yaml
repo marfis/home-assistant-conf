@@ -35,6 +35,9 @@ tts:
 # Max! eQ-3
 maxcube: !include devices/maxcube.yaml
 
+# MiLight
+light: !include devices/light.yaml
+
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml

@@ -1,0 +1,30 @@
+platform: limitlessled
+bridges:
+  - host: lights-1.fritz.box
+    groups:
+      - number: 1
+        type: rgbww
+        name: Küche
+      - number: 2
+        type: rgbww
+        name: Loggia
+      - number: 3
+        type: rgbww
+        name: Bad
+      - number: 4
+        type: rgbww
+        name: Flur
+  - host: lights-2.fritz.box
+    groups:
+      - number: 1
+        type: rgbww
+        name: Wohnzimmer Decke 1        
+      - number: 2
+        type: rgbww
+        name: Wohnzimmer Decke 2        
+      - number: 3    
+        type: rgbww
+        name: Schreibtischlampe        
+      - number: 4
+        type: rgbww
+        name: Schlafzimmer        

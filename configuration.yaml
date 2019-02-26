@@ -30,13 +30,17 @@ sensor:
 
 # Text to speech
 tts:
-  - platform: google
+  - platform: google_translate
+    service_name: google_say
 
 # Max! eQ-3
 maxcube: !include devices/maxcube.yaml
 
 # MiLight
 light: !include devices/light.yaml
+
+# Switches (433MHz sockets)
+switch: !include devices/switch.yaml
 
 group: !include groups.yaml
 automation: !include automations.yaml

@@ -1,0 +1,4 @@
+gateways:        
+  - host: heating.fritz.box
+    port: 62910
+    scan_interval: 600

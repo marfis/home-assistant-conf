@@ -3,5 +3,6 @@
 !*.yaml
 !*.md
 !.gitignore
+!devices
 
 secrets.yaml

@@ -32,6 +32,9 @@ sensor:
 tts:
   - platform: google
 
+# Max! eQ-3
+maxcube: !include devices/maxcube.yaml
+
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml

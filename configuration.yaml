@@ -39,6 +39,9 @@ mqtt:
 mqtt_eventstream:
   publish_topic: homeassistant
 
+# Alexa support
+alexa:
+
 # Max! eQ-3
 maxcube: !include devices/maxcube.yaml
 

@@ -33,6 +33,12 @@ tts:
   - platform: google_translate
     service_name: google_say
 
+# MQTT support
+mqtt:
+  broker: hamster.fritz.box
+  port: 1883
+  client_id: homeassistant
+
 # Max! eQ-3
 maxcube: !include devices/maxcube.yaml
 

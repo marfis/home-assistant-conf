@@ -39,6 +39,9 @@ mqtt:
   port: 1883
   client_id: homeassistant
 
+mqtt_eventstream:
+  publish_topic: homeassistant
+
 # Max! eQ-3
 maxcube: !include devices/maxcube.yaml
 

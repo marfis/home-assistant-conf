@@ -23,6 +23,9 @@ homeassistant:
   # Customization file
   customize: !include customize.yaml
 
+# Debug logging
+logger:
+
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 

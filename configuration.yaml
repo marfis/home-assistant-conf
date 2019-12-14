@@ -59,7 +59,7 @@ api:
 alexa:
 
 # Max! eQ-3
-maxcube: !include devices/maxcube.yaml
+maxcube: !include devices/heating.yaml
 
 # MiLight
 light: !include devices/light.yaml

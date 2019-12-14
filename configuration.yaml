@@ -1,15 +1,25 @@
 homeassistant:
+
   # Name of the location where Home Assistant is running
   name: hamster
+
+  # Authentication
+  auth_providers:
+    - type: homeassistant
+
   # Location required to calculate the time the sun rises and sets
   latitude: !secret LATITUDE
   longitude: !secret LONGITUDE
+
   # Impacts weather/sunrise data (altitude above sea level in meters)
   elevation: !secret ELEVATION
+
   # metric for Metric, imperial for Imperial
   unit_system: metric
+
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: Europe/Berlin
+
   # Customization file
   customize: !include customize.yaml
 
@@ -38,6 +48,9 @@ mqtt:
 
 mqtt_eventstream:
   publish_topic: homeassistant
+
+# Enable REST API
+api:
 
 # Alexa support
 alexa:

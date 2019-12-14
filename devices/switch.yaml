@@ -24,3 +24,9 @@
       friendly_name: 'Loggia Deckenfluter'
       command_on: 'sgcyAAYTBhMGExIHBhMSBwYTBhMGExIHEgcSBwYTEgcGExIHBhMGEwYTBhMGEwYTEgcSBwa5AAAAAAAA'
       command_off: 'shwyAAYTBhMGExIHBhMSCAYTBhMGExIHEgcSBwYTEgcGExIHBhMHEwcTBhMSBxIHBhMGEwa6AAAAAAAA'
+
+- platform: broadlink
+  host: rfir-2.fritz.box
+  mac: 'C8:F7:42:16:97:09'
+  type: rm_mini
+  friendly_name: 'IR Hub'

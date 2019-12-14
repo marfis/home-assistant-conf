@@ -1,0 +1,32 @@
+# RF Sockets
+SwitchSocketOff:
+  action:
+    service: switch.turn_off
+    data_template:
+      entity_id: switch.{{room}}_{{socket}}
+  async_action: true
+  speech:
+    type: plain
+    text: "OK"
+
+SwitchSocketOn:
+  action:
+    service: switch.turn_on
+    data_template:
+      entity_id: switch.{{room}}_{{socket}}
+  async_action: true
+  speech:
+    type: plain
+    text: "OK"
+
+# eQ3 MAX!
+SetModeAuto:
+  action:
+    service: climate.set_operation_mode
+    data_template:
+      entity_id: group.climate_{{room}}
+      operation_mode: auto
+  async_action: true
+  speech:
+    type: plain
+    text: "OK"

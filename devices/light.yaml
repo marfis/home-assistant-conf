@@ -1,30 +1,30 @@
 platform: limitlessled
 bridges:
-  - host: lights-1.fritz.box
+  - host: light-2.fritz.box
     groups:
       - number: 1
         type: rgbww
-        name: kittchen
+        name: Küche Licht
       - number: 2
         type: rgbww
-        name: loggia
+        name: Loggia Licht
       - number: 3
         type: rgbww
-        name: bathroom
+        name: Bad Licht
       - number: 4
         type: rgbww
-        name: hallway
-  - host: lights-2.fritz.box
+        name: Flur Licht
+  - host: light-1.fritz.box
     groups:
       - number: 1
         type: rgbww
-        name: livingroom_one
+        name: Wohnzimmer Licht I
       - number: 2
         type: rgbww
-        name: livingroom_two
+        name: Wohnzimmer Licht II
       - number: 3
         type: rgbww
-        name: livingroom_desk_lamp
+        name: Schreibtichlampe
       - number: 4
         type: rgbww
-        name: bedroom
+        name: Schlafzimmer Licht

@@ -1,0 +1,48 @@
+desklamp:
+  name: Schreibtischlampe
+  entities:
+    - switch.livingroom_desklamp
+    - light.schreibtischlampe
+livingroom:
+  name: Wohnzimmer
+  entities:
+    - climate.wohnzimmer_heizung
+    - climate.wohnzimmer_wandthermostat
+    - switch.livingroom_uplighter
+    - switch.livingroom_globe
+    - light.wohnzimmer_licht_i
+    - light.wohnzimmer_licht_ii
+    - group.desklamp
+kittchen:
+  name: Küche
+  entities:
+    - climate.kuche_heizung
+    - climate.kuche_wandthermostat
+    - light.kuche_licht
+loggia:
+  name: Loggia
+  entities:
+    - switch.loggia_uplighter
+    - light.loggia_licht
+bedroom:
+  name: Schlafzimmer
+  entities:
+    - switch.bedroom_nightbulb
+    - climate.schlafzimmer_heizung
+    - climate.schlafzimmer_wandthermostat
+    - light.schlafzimmer_licht
+bathroom:
+  name: Bad
+  entities:
+    - climate.bad_heizung
+    - climate.bad_wandthermostat
+    - light.bad_licht
+workroom:
+  name: Hobbyraum
+  entities:
+    - climate.hobbyraum_heizung
+    - climate.hobbyraum_wandthermostat
+hallway:
+  name: Flur
+  entities:
+    - light.flur_licht

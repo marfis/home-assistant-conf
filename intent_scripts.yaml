@@ -22,10 +22,88 @@ SwitchSocketOn:
 # eQ3 MAX!
 SetModeAuto:
   action:
-    service: climate.set_operation_mode
+    service: climate.set_hvac_mode
     data_template:
-      entity_id: group.climate_{{room}}
-      operation_mode: auto
+      entity_id: group.{{room}}
+      hvac_mode: auto
+  async_action: true
+  speech:
+    type: plain
+    text: "OK"
+
+SetModeHeat:
+  action:
+    service: climate.set_hvac_mode
+    data_template:
+      entity_id: group.{{room}}
+      hvac_mode: heat
+  async_action: true
+  speech:
+    type: plain
+    text: "OK"
+    
+SetModeOff:
+  action:
+    service: climate.set_hvac_mode
+    data_template:
+      entity_id: group.{{room}}
+      hvac_mode: off
+  async_action: true
+  speech:
+    type: plain
+    text: "OK"
+    
+SetModeComfort:
+  action:
+    service: climate.set_preset_mode
+    data_template:
+      entity_id: group.{{room}}
+      preset_mode: comfort
+  async_action: true
+  speech:
+    type: plain
+    text: "OK"
+    
+
+SetModeEco:
+  action:
+    service: climate.set_preset_mode
+    data_template:
+      entity_id: group.{{room}}
+      preset_mode: eco
+  async_action: true
+  speech:
+    type: plain
+    text: "OK"
+    
+SetModeAway:
+  action:
+    service: climate.set_preset_mode
+    data_template:
+      entity_id: group.{{room}}
+      preset_mode: away
+  async_action: true
+  speech:
+    type: plain
+    text: "OK"
+    
+SetModeOn:
+  action:
+    service: climate.set_preset_mode
+    data_template:
+      entity_id: group.{{room}}
+      preset_mode: on
+  async_action: true
+  speech:
+    type: plain
+    text: "OK"
+    
+SetModeBoost:
+  action:
+    service: climate.set_preset_mode
+    data_template:
+      entity_id: group.{{room}}
+      preset_mode: boost
   async_action: true
   speech:
     type: plain

@@ -108,3 +108,13 @@ SetModeBoost:
   speech:
     type: plain
     text: "OK"
+
+SetTemperature:
+  action:
+    service: climate.set_temperature
+    data_template:
+      entity_id: group.{{room}}
+#      temperature: {{temperature}}
+#      target_temp_high: {{(temperature + 3)}}
+#      target_temp_low: {{(temperature - 3)}}
+      hvac_mode: heat

@@ -1,0 +1,229 @@
+- name: cosy_light
+  icon: "mdi:flower-tulip"
+  entities:
+    light.livingroom_1:
+      state: "on"
+      hs_color: [ 210, 85 ]
+      brightness: 200
+    light.livingroom_2:
+      state: "on"
+      hs_color: [ 150, 55 ]
+      brightness: 200
+    remote.harmony:
+      state: "on"
+    group.climate_apartment:
+      state: "on"
+      hvac_mode: "heat"
+      preset_mode: "comfort"
+- name: cosy_dark
+  icon: "mdi:flower-tulip"
+  entities:
+    light.livingroom_1:
+      state: "on"
+      hs_color: [ 240, 100 ]
+      brightness: 100
+    light.livingroom_2:
+      state: "on"
+      hs_color: [ 255, 100 ]
+      brightness: 100
+    remote.harmony:
+      state: "on"
+    group.climate_apartment:
+      state: "on"
+      hvac_mode: "heat"
+      preset_mode: "comfort"
+- name: chill_1
+  icon: "mdi:flower-tulip"
+  entities:
+    light.livingroom_1:
+      state: "on"
+      hs_color: [ 240, 100 ]
+      brightness: 100
+    light.livingroom_2:
+      state: "on"
+      hs_color: [ 255, 100 ]
+      brightness: 100
+    remote.harmony:
+      state: "on"
+    group.climate_apartment:
+      state: "on"
+      hvac_mode: "heat"
+      preset_mode: "comfort"
+- name: chill_2
+  icon: "mdi:flower-tulip"
+  entities:
+    light.livingroom_1:
+      state: "on"
+      hs_color: [ 240, 100 ]
+      brightness: 100
+    light.livingroom_2:
+      state: "on"
+      hs_color: [ 255, 100 ]
+      brightness: 100
+    remote.harmony:
+      state: "on"
+    group.climate_apartment:
+      state: "on"
+      hvac_mode: "heat"
+      preset_mode: "comfort"
+- name: chill_3
+  icon: "mdi:flower-tulip"
+  entities:
+    light.livingroom_1:
+      state: "on"
+      hs_color: [ 240, 100 ]
+      brightness: 100
+    light.livingroom_2:
+      state: "on"
+      hs_color: [ 255, 100 ]
+      brightness: 100
+    remote.harmony:
+      state: "on"
+    group.climate_apartment:
+      state: "on"
+      hvac_mode: "heat"
+      preset_mode: "comfort"
+- name: chill_4
+  icon: "mdi:flower-tulip"
+  entities:
+    light.livingroom_1:
+      state: "on"
+      hs_color: [ 240, 100 ]
+      brightness: 100
+    light.livingroom_2:
+      state: "on"
+      hs_color: [ 255, 100 ]
+      brightness: 100
+    remote.harmony:
+      state: "on"
+    group.climate_apartment:
+      state: "on"
+      hvac_mode: "heat"
+      preset_mode: "comfort"
+- name: chill_5
+  icon: "mdi:flower-tulip"
+  entities:
+    light.livingroom_1:
+      state: "on"
+      hs_color: [ 240, 100 ]
+      brightness: 100
+    light.livingroom_2:
+      state: "on"
+      hs_color: [ 255, 100 ]
+      brightness: 100
+    remote.harmony:
+      state: "on"
+    group.climate_apartment:
+      state: "on"
+      hvac_mode: "heat"
+      preset_mode: "comfort"
+- name: goodnight
+  icon: "mdi:bell-sleep"
+  entities:
+    group.light_apartment:
+      state: "off"
+    switch.bedroom_nightbulb:
+      state: "on"
+    light.bathroom:
+      state: "on"
+    light.hallway:
+      state: "on"
+    group.climate_apartment:
+      state: "on"
+      hvac_mode: "auto"
+      preset_mode: "eco"
+- name: sleep
+  icon: "mdi:sleep"
+  entities:
+    group.light_apartment:
+      state: "off"
+    switch.bedroom_nightbulb:
+      state: "on"
+    group.climate_apartment:
+      state: "on"
+      hvac_mode: "auto"
+      preset_mode: "eco"
+- name: work
+  icon: "mdi:desk"
+  entities:
+    group.light_apartment:
+      state: "off"
+    light.livingroom_2:
+      state: "on"
+      hs_color: [ 225, 85 ]
+      brightness: 150
+    group.climate_apartment:
+      state: "on"
+      hvac_mode: "heat"
+      preset_mode: "eco"
+- name: away
+  icon: "mdi:arrow-left-bold-circle-outline"
+  entities:
+    group.light_apartment:
+      state: "off"
+    group.climate_apartment:
+      state: "on"
+      hvac_mode: "heat"
+      preset_mode: "away"
+      temperature: 12
+- name: nightlight
+  entities:
+    group.light_apartment:
+      state: "on"
+      effect: "night"
+
+- name: reset
+  icon: "mdi:restart"
+  entities:
+    group.light_apartment:
+      state: "off"
+    light.hallway:
+      state: "on"
+      rgb_color: [ 255, 255, 255 ]
+      brightness: 255
+      white_value: 255
+    group.light_livingroom:
+      state: "on"
+      rgb_color: [ 255, 255, 255 ]
+      brightness: 255
+      white_value: 255
+    group.climate_apartment:
+      state: "on"
+      hvac_mode: "auto"
+- name: reset_light
+  icon: "mdi:restart"
+  entities:
+    group.light_apartment:
+      state: "off"
+    light.hallway:
+      state: "on"
+      rgb_color: [ 255, 255, 255 ]
+      brightness: 255
+      white_value: 255
+    group.light_livingroom:
+      state: "on"
+      rgb_color: [ 255, 255, 255 ]
+      brightness: 255
+      white_value: 255
+- name: reset_climate
+  icon: "mdi:restart"
+  entities:
+    group.climate_apartment:
+      state: "on"
+      hvac_mode: "auto"
+
+- name: apartment_off
+  icon: "mdi:power-plug-off"
+  entities:
+    group.apartment:
+      state: "off"
+- name: climate_off
+  icon: "mdi:power-plug-off"
+  entities:
+    group.climate_apartment:
+      state: "off"
+- name: light_off
+  icon: "mdi:power-plug-off"
+  entities:
+    group.light_apartment:
+      state: "off"

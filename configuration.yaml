@@ -20,9 +20,6 @@ homeassistant:
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: Europe/Berlin
 
-  # Customization file
-  customize: !include customize.yaml
-
 # Debug logging
 logger:
 
@@ -35,8 +32,6 @@ default_config:
 
 # Sensors
 sensor:
-  # Weather prediction
-  - platform: yr
 
 # Text to speech
 tts:
@@ -58,6 +53,10 @@ api:
 # Alexa support
 alexa:
 
+# IFTTT support
+ifttt:
+  key: !secret IFTTT_API_KEY
+
 # Max! eQ-3
 maxcube: !include devices/heating.yaml
 
@@ -67,8 +66,24 @@ light: !include devices/light.yaml
 # Switches (433MHz sockets)
 switch: !include devices/switch.yaml
 
+input_select:
+  remote_harmony:
+    name: Harmony
+    options:
+    - PowerOff
+    - DVD/Bluray
+    - Fire TV
+    - Radio
+    - Zattoo
+    - Plattenspieler
+    - Chromecast
+    - PC spiegeln
+    - Xbox
+    - Klimaaanlage
+
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 intent_script: !include intent_scripts.yaml
 remote: !include remotes.yaml
+scene: !include scenes.yaml

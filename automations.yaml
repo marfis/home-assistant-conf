@@ -1,1 +1,100 @@
-[]
+- alias: "Power Off"
+  trigger:
+    platform: state
+    entity_id: input_select.remote_harmony
+    to: 'PowerOff'
+  action:
+    service: remote.turn_off
+    entity_id: remote.harmony
+    data:
+      activity: 'PowerOff'
+- alias: "DVD/Bluray"
+  trigger:
+    platform: state
+    entity_id: input_select.remote_harmony
+    to: 'DVD/Bluray'
+  action:
+    service: remote.turn_on
+    entity_id: remote.harmony
+    data:
+      activity: 'DVD/Bluray'
+- alias: "Fire TV"
+  trigger:
+    platform: state
+    entity_id: input_select.remote_harmony
+    to: 'Fire TV'
+  action:
+    service: remote.turn_on
+    entity_id: remote.harmony
+    data:
+      activity: 'Fire TV'
+- alias: "Radio"
+  trigger:
+    platform: state
+    entity_id: input_select.remote_harmony
+    to: 'Radio'
+  action:
+    service: remote.turn_on
+    entity_id: remote.harmony
+    data:
+      activity: "Radio"
+- alias: "Zattoo"
+  trigger:
+    platform: state
+    entity_id: input_select.remote_harmony
+    to: 'Zattoo'
+  action:
+    service: remote.turn_on
+    entity_id: remote.harmony
+    data:
+      activity: "Zattoo"
+- alias: "Plattenspieler"
+  trigger:
+    platform: state
+    entity_id: input_select.remote_harmony
+    to: 'Plattenspieler'
+  action:
+    service: remote.turn_on
+    entity_id: remote.harmony
+    data:
+      activity: "Plattenspieler"
+- alias: "Chromecast"
+  trigger:
+    platform: state
+    entity_id: input_select.remote_harmony
+    to: 'Chromecast'
+  action:
+    service: remote.turn_on
+    entity_id: remote.harmony
+    data:
+      activity: "Chromecast"
+- alias: "PC spiegeln"
+  trigger:
+    platform: state
+    entity_id: input_select.remote_harmony
+    to: 'PC spiegeln'
+  action:
+    service: remote.turn_on
+    entity_id: remote.harmony
+    data:
+      activity: "PC spiegeln"
+- alias: "Xbox"
+  trigger:
+    platform: state
+    entity_id: input_select.remote_harmony
+    to: 'Xbox'
+  action:
+    service: remote.turn_on
+    entity_id: remote.harmony
+    data:
+      activity: "Xbox"
+- alias: "Klimaanlage"
+  trigger:
+    platform: state
+    entity_id: input_select.remote_harmony
+    to: 'Klimaanlage'
+  action:
+    service: remote.turn_on
+    entity_id: remote.harmony
+    data:
+      activity: "Klimaanlage"

@@ -1,0 +1,8 @@
+harmony_activity:
+  name: Harmony Activity
+  options:
+    - Select
+    - PowerOff
+    - DVD/Bluray
+    - Fire TV
+  initial: 'Select'

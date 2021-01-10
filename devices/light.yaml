@@ -4,27 +4,27 @@ bridges:
     groups:
       - number: 1
         type: rgbww
-        name: Küche Licht
+        name: kittchen
       - number: 2
         type: rgbww
-        name: Loggia Licht
+        name: loggia
       - number: 3
         type: rgbww
-        name: Bad Licht
+        name: bathroom
       - number: 4
         type: rgbww
-        name: Flur Licht
+        name: hallway
   - host: light-1.fritz.box
     groups:
       - number: 1
         type: rgbww
-        name: Wohnzimmer Licht I
+        name: livingroom_1
       - number: 2
         type: rgbww
-        name: Wohnzimmer Licht II
+        name: livingroom_2
       - number: 3
         type: rgbww
-        name: Schreibtichlampe
+        name: livingroom_desklamp
       - number: 4
         type: rgbww
-        name: Schlafzimmer Licht
+        name: bedroom

@@ -1,0 +1,166 @@
+light_reset:
+  alias: Reset Licht
+  sequence:
+    - service: light.turn_on
+      data:
+        entity_id: group.light_apartment
+        effect: "white"
+    - delay:
+        seconds: 1
+    - service: light.turn_off
+      data:
+        entity_id: group.light_apartment
+    - delay:
+        seconds: 1
+    - service: light.turn_on
+      data:
+        entity_id: light.hallway
+        effect: "white"
+    - delay:
+        seconds: 1
+    - service: light.turn_on
+      data:
+        entity_id: group.light_livingroom_ceiling
+        effect: "white"
+
+climate_auto_apartment:
+  alias: Heizung Auto Apartment
+  sequence:
+    - service: climate.set_hvac_mode
+      data:
+        entity_id: group.climate_apartment
+        hvac_mode: "auto"
+
+climate_boost_apartment:
+  alias: Heizung Boost Apartment
+  sequence:
+    - service: climate.set_preset_mode
+      data:
+        entity_id: group.climate_apartment
+        preset_mode: "boost"
+
+climate_comfort_apartment:
+  alias: Heizung Comfort Apartment
+  sequence:
+    - service: climate.set_temperature
+      data:
+        entity_id: group.climate_livingroom
+        temperature: 26
+    - delay:
+        seconds: 3
+    - service: climate.set_temperature
+      data:
+        entity_id: group.climate_bathroom
+        temperature: 26
+    - delay:
+        seconds: 3
+    - service: climate.set_temperature
+      data:
+        entity_id: group.climate_bedroom
+        temperature: 23
+    - delay:
+        seconds: 3
+    - service: climate.set_temperature
+      data:
+        entity_id: group.climate_kitchen
+        temperature: 23
+    - delay:
+        seconds: 3
+    - service: climate.set_preset_mode
+      data:
+        entity_id: group.climate_workroom
+        preset_mode: "eco"
+
+climate_eco_apartment:
+  alias: Heizung Eco Apartment
+  sequence:
+    - service: climate.set_preset_mode
+      data:
+        entity_id: group.climate_apartment
+        preset_mode: "eco"
+
+climate_away_apartment:
+  alias: Heizung Away Apartment
+  sequence:
+    - service: climate.set_preset_mode
+      data:
+        entity_id: group.climate_apartment
+        preset_mode: "away"
+
+climate_on_apartment:
+  alias: Heizung On Apartment
+  sequence:
+    - service: climate.set_temperature
+      data:
+        entity_id: group.climate_apartment
+        temperature: 30
+    - delay:
+        seconds: 3
+    - service: climate.set_preset_mode
+      data:
+        entity_id: group.climate_workroom
+        preset_mode: "eco"
+
+climate_off_apartment:
+  alias: Heizung Off Apartment
+  sequence:
+    - service: climate.set_hvac_mode
+      data:
+        entity_id: group.climate_apartment
+        hvac_mode: "off"
+
+climate_autumn_apartment:
+  alias: Heizung Autumn Apartment
+  sequence:
+    - service: climate.set_temperature
+      data:
+        entity_id: group.climate_apartment
+        temperature: 21
+    - delay:
+        seconds: 3
+    - service: climate.set_preset_mode
+      data:
+        entity_id: group.climate_workroom
+        preset_mode: "eco"
+
+climate_spring_apartment:
+  alias: Heizung Spring Apartment
+  sequence:
+    - service: climate.set_temperature
+      data:
+        entity_id: group.climate_apartment
+        temperature: 17
+    - delay:
+        seconds: 3
+    - service: climate.set_preset_mode
+      data:
+        entity_id: group.climate_workroom
+        preset_mode: "eco"
+
+climate_summer_apartment:
+  alias: Heizung Sommer Apartment
+  sequence:
+    - service: climate.set_hvac_mode
+      data:
+        entity_id: group.climate_apartment
+        hvac_mode: off
+
+climate_winter_apartment:
+  alias: Heizung Winter Apartment
+  sequence:
+    - service: climate.set_temperature
+      data:
+        entity_id: group.climate_apartment
+        temperature: 26
+    - delay:
+        seconds: 3
+    - service: climate.set_temperature
+      data:
+        entity_id: group.climate_bedroom
+        temperature: 21
+    - delay:
+        seconds: 3
+    - service: climate.set_preset_mode
+      data:
+        entity_id: group.climate_workroom
+        preset_mode: "eco"

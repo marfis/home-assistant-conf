@@ -1,5 +1,5 @@
 # RF Sockets
-SwitchSocketOff:
+switch_turn_off:
   action:
     service: switch.turn_off
     data_template:
@@ -9,7 +9,7 @@ SwitchSocketOff:
     type: plain
     text: "OK"
 
-SwitchSocketOn:
+switch_turn_on:
   action:
     service: switch.turn_on
     data_template:
@@ -20,7 +20,7 @@ SwitchSocketOn:
     text: "OK"
 
 # eQ3 MAX!
-SetModeAuto:
+climate_set_auto:
   action:
     service: climate.set_hvac_mode
     data_template:
@@ -31,7 +31,7 @@ SetModeAuto:
     type: plain
     text: "OK"
 
-SetModeHeat:
+climate_set_heat:
   action:
     service: climate.set_hvac_mode
     data_template:
@@ -42,7 +42,7 @@ SetModeHeat:
     type: plain
     text: "OK"
     
-SetModeOff:
+climate_set_off:
   action:
     service: climate.set_hvac_mode
     data_template:
@@ -53,7 +53,7 @@ SetModeOff:
     type: plain
     text: "OK"
     
-SetModeComfort:
+climate_set_comfort:
   action:
     service: climate.set_preset_mode
     data_template:
@@ -65,7 +65,7 @@ SetModeComfort:
     text: "OK"
     
 
-SetModeEco:
+climate_set_eco:
   action:
     service: climate.set_preset_mode
     data_template:
@@ -76,7 +76,7 @@ SetModeEco:
     type: plain
     text: "OK"
     
-SetModeAway:
+climate_set_away:
   action:
     service: climate.set_preset_mode
     data_template:
@@ -87,7 +87,7 @@ SetModeAway:
     type: plain
     text: "OK"
     
-SetModeOn:
+climate_set_on:
   action:
     service: climate.set_preset_mode
     data_template:
@@ -98,7 +98,7 @@ SetModeOn:
     type: plain
     text: "OK"
     
-SetModeBoost:
+climate_set_boost:
   action:
     service: climate.set_preset_mode
     data_template:
@@ -109,7 +109,7 @@ SetModeBoost:
     type: plain
     text: "OK"
 
-SetTemperature:
+climate_set_temperature:
   action:
     service: climate.set_temperature
     data_template:
@@ -118,3 +118,77 @@ SetTemperature:
 #      target_temp_high: {{(temperature + 3)}}
 #      target_temp_low: {{(temperature - 3)}}
       hvac_mode: heat
+
+# Scenes
+
+scene_turn_on_cosy_light:
+  action:
+    service: scene.turn_on
+    data_template:
+      entity_id: scene.cosy_light
+
+scene_turn_on_cosy_dark:
+  action:
+    service: scene.turn_on
+    data_template:
+      entity_id: scene.cosy_dark
+
+scene_turn_on_goodnight:
+  action:
+    service: scene.turn_on
+    data_template:
+      entity_id: scene.goodnight
+
+scene_turn_on_sleep:
+  action:
+    service: scene.turn_on
+    data_template:
+      entity_id: scene.sleep
+
+scene_turn_on_work:
+  action:
+    service: scene.turn_on
+    data_template:
+      entity_id: scene.work
+
+scene_turn_on_away:
+  action:
+    service: scene.turn_on
+    data_template:
+      entity_id: scene.away
+
+scene_turn_on_white:
+  action:
+    service: scene.turn_on
+    data_template:
+      entity_id: scene.white
+
+scene_turn_on_nightlight:
+  action:
+    service: scene.turn_on
+    data_template:
+      entity_id: scene.nightlight
+
+scene_turn_on_reset:
+  action:
+    service: scene.turn_on
+    data_template:
+      entity_id: scene.reset
+
+scene_turn_on_reset_light:
+  action:
+    service: scene.turn_on
+    data_template:
+      entity_id: scene.reset_light
+
+scene_turn_on_light_off:
+  action:
+    service: scene.turn_on
+    data_template:
+      entity_id: scene.light_off
+
+scene_turn_on_light_ceiling_off:
+  action:
+    service: scene.turn_on
+    data_template:
+      entity_id: scene.light_ceiling_off

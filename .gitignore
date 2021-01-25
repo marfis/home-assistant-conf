@@ -4,5 +4,7 @@
 !*.md
 !.gitignore
 !devices
+!blueprints
+!.storage/lovelace
 
 secrets.yaml

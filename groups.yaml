@@ -4,21 +4,50 @@ livingroom_desklamp:
     - switch.livingroom_desklamp
     - light.livingroom_desklamp
 
-light_livingroom:
+light_livingroom_ceiling:
   name: Wohnzimmer
   entities:
     - light.livingroom_1
     - light.livingroom_2
+
+light_livingroom:
+  name: Wohnzimmer
+  entities:
+    - group.light_livingroom_ceiling
     - switch.livingroom_uplighter
     - switch.livingroom_globe
     - group.livingroom_desklamp
 
-light_kittchenarea:
+light_kitchenarea:
   name: Küchenbereich
   entities:
-    - light.kittchen
+    - light.kitchen
     - light.loggia
     - switch.loggia_uplighter
+
+light_kitchenarea_ceiling:
+  name: Küchenbereich Decken
+  entities:
+    - light.kitchen
+    - light.loggia
+
+light_nightlight:
+  name: Nachtlicht Gruppe
+  entities:
+    - light.livingroom_1
+    - light.livingroom_2
+    - light.kitchen
+    - light.bedroom
+    - light.bathroom
+
+light_apartment_ceiling:
+  name: Wohnzimmer Decke
+  entities:
+    - group.light_livingroom_ceiling
+    - group.light_kitchenarea_ceiling
+    - light.bedroom
+    - light.bathroom
+    - light.hallway
 
 livingroom:
   name: Wohnzimmer
@@ -26,17 +55,20 @@ livingroom:
     - climate.wohnzimmer_heizung
     - climate.wohnzimmer_wandthermostat
     - group.light_livingroom
-kittchen:
+
+kitchen:
   name: Küche
   entities:
     - climate.kuche_heizung
     - climate.kuche_wandthermostat
-    - light.kittchen
+    - light.kitchen
+
 loggia:
   name: Loggia
   entities:
     - switch.loggia_uplighter
     - light.loggia
+
 bedroom:
   name: Schlafzimmer
   entities:
@@ -44,37 +76,65 @@ bedroom:
     - climate.schlafzimmer_heizung
     - climate.schlafzimmer_wandthermostat
     - light.bedroom
+
 bathroom:
   name: Bad
   entities:
     - climate.bad_heizung
     - climate.bad_wandthermostat
     - light.bathroom
+
 workroom:
   name: Hobbyraum
   entities:
     - climate.hobbyraum_heizung
     - climate.hobbyraum_wandthermostat
+
 hallway:
   name: Flur
   entities:
     - light.hallway
 
 apartment:
-  name: Alles
+  name: Wohnung
   entities:
     - group.livingroom
     - group.bathroom
     - group.workroom
     - group.hallway
     - group.bedroom
-    - group.kittchen
+    - group.kitchen
     - group.loggia
-init:
-  name: Wohnung
+
+climate_livingroom:
+  name: Heizung Wohnzimmer
   entities:
-    - group.livingroom
-    - group.hallway
+    - climate.wohnzimmer_heizung
+    - climate.wohnzimmer_wandthermostat
+
+climate_kitchen:
+  name: Küche
+  entities:
+    - climate.kuche_heizung
+    - climate.kuche_wandthermostat
+
+climate_bedroom:
+  name: Schlafzimmer
+  entities:
+    - climate.schlafzimmer_heizung
+    - climate.schlafzimmer_wandthermostat
+
+climate_bathroom:
+  name: Badezimmer
+  entities:
+    - climate.bad_heizung
+    - climate.bad_wandthermostat
+
+climate_workroom:
+  name: Arbeitszimmer
+  entities:
+    - climate.hobbyraum_heizung
+    - climate.hobbyraum_wandthermostat
 
 climate_apartment:
   name: Heizung

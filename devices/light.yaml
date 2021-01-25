@@ -4,7 +4,7 @@ bridges:
     groups:
       - number: 1
         type: rgbww
-        name: kittchen
+        name: kitchen
       - number: 2
         type: rgbww
         name: loggia

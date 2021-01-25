@@ -1,0 +1,36 @@
+- platform: time_date
+  display_options:
+    - 'time'
+    - 'date'
+    - 'date_time'
+    - 'date_time_utc'
+    - 'date_time_iso'
+    - 'time_date'
+    - 'time_utc'
+    - 'beat'
+
+- platform: template
+  sensors:
+    month:
+      friendly_name: "Month"
+      value_template: "{{ as_timestamp(states('sensor.date_time_iso')) | timestamp_custom('%m') }}"
+      icon_template: mdi:calendar-clock
+    week_of_year:
+      friendly_name: "Week of Year"
+      value_template: "{{ as_timestamp(states('sensor.date_time_iso')) | timestamp_custom('%W') }}"
+      icon_template: mdi:calendar-clock
+
+- platform: command_line
+  name: RPi CPU Temperature
+  command: "cat /sys/class/thermal/thermal_zone0/temp"
+  unit_of_measurement: "°C"
+  value_template: '{{ value | multiply(0.001) | round(1) }}'
+
+- platform: command_line
+  name: RPi Power Status
+  command: "./scripts/rpi_power_status.sh"
+
+- platform: xbox_live
+  api_key: !secret XAPI_API_KEY
+  xuid:
+    - !secret XAPI_USER_ID

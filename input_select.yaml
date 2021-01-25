@@ -5,4 +5,11 @@ harmony_activity:
     - PowerOff
     - DVD/Bluray
     - Fire TV
+    - Radio
+    - Zattoo
+    - Plattenspieler
+    - Chromecast
+    - PC spiegeln
+    - Xbox
+    - Klimaanlage
   initial: 'Select'

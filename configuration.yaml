@@ -31,7 +31,7 @@ default_config:
 #   base_url: example.duckdns.org:8123
 
 # Sensors
-sensor:
+sensor: !include sensors.yaml
 
 # Text to speech
 tts:
@@ -57,14 +57,31 @@ alexa:
 ifttt:
   key: !secret IFTTT_API_KEY
 
+# PiHole statistics
+# pi_hole:
+#   - host: hole.fritz.box
+#     name: hole
+#     verify_ssl: false
+#     api_key: !secret PI_HOLE_1_API_KEY
+
+# Synology DSM
+synology_dsm: !include devices/synology_dsm.yaml
+
+# Track mobile devices
+mobile_app:
+discovery:
+
 # Max! eQ-3
-maxcube: !include devices/heating.yaml
+maxcube: !include devices/maxcube.yaml
 
 # MiLight
 light: !include devices/light.yaml
 
 # Switches (433MHz sockets)
 switch: !include devices/switch.yaml
+
+# AVM Fritz!SmartHome
+fritzbox: !include devices/fritzbox.yaml
 
 input_select:
   remote_harmony:

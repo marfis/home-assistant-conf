@@ -1,0 +1,1284 @@
+{
+    "version": 1,
+    "key": "lovelace",
+    "data": {
+        "config": {
+            "views": [
+                {
+                    "title": "",
+                    "path": "home",
+                    "panel": true,
+                    "icon": "mdi:home",
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "vertical-stack",
+                            "cards": [
+                                {
+                                    "type": "markdown",
+                                    "content": "## HOME"
+                                },
+                                {
+                                    "type": "horizontal-stack",
+                                    "cards": [
+                                        {
+                                            "type": "weather-forecast",
+                                            "entity": "weather.hamster",
+                                            "name": "Stuttgart"
+                                        },
+                                        {
+                                            "type": "horizontal-stack",
+                                            "cards": [
+                                                {
+                                                    "type": "vertical-stack",
+                                                    "cards": [
+                                                        {
+                                                            "type": "markdown",
+                                                            "content": "### PI"
+                                                        },
+                                                        {
+                                                            "type": "entities",
+                                                            "entities": [
+                                                                {
+                                                                    "entity": "sensor.rpi_power_status",
+                                                                    "name": "Power Status"
+                                                                },
+                                                                {
+                                                                    "entity": "sensor.rpi_cpu_temperature",
+                                                                    "name": "CPU Temperature"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "vertical-stack",
+                                                    "cards": [
+                                                        {
+                                                            "type": "markdown",
+                                                            "content": "### MOBILE"
+                                                        },
+                                                        {
+                                                            "type": "entities",
+                                                            "entities": [
+                                                                {
+                                                                    "entity": "sensor.molecule_akkufullstand",
+                                                                    "name": "Smartphone (%)"
+                                                                },
+                                                                {
+                                                                    "entity": "sensor.pad_akkufullstand",
+                                                                    "name": "Pad (%)"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "horizontal-stack",
+                                    "cards": [
+                                        {
+                                            "type": "vertical-stack",
+                                            "cards": [
+                                                {
+                                                    "type": "markdown",
+                                                    "content": "### SZENEN"
+                                                },
+                                                {
+                                                    "type": "horizontal-stack",
+                                                    "cards": [
+                                                        {
+                                                            "type": "entities",
+                                                            "entities": [
+                                                                {
+                                                                    "entity": "scene.work",
+                                                                    "name": "Home Office"
+                                                                },
+                                                                {
+                                                                    "entity": "scene.goodnight",
+                                                                    "name": "Zu Bett"
+                                                                },
+                                                                {
+                                                                    "entity": "scene.sleep",
+                                                                    "name": "Schlafen"
+                                                                },
+                                                                {
+                                                                    "entity": "scene.away",
+                                                                    "name": "Abwesend"
+                                                                },
+                                                                {
+                                                                    "entity": "scene.reset",
+                                                                    "name": "Reset"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "entities",
+                                                            "entities": [
+                                                                {
+                                                                    "entity": "scene.cosy_light",
+                                                                    "name": "Gem\u00fctlich (hell)"
+                                                                },
+                                                                {
+                                                                    "entity": "scene.cosy_dark",
+                                                                    "name": "Gem\u00fctlich (dunkel)"
+                                                                },
+                                                                {
+                                                                    "entity": "scene.chill_1",
+                                                                    "name": "Pinky"
+                                                                },
+                                                                {
+                                                                    "entity": "scene.chill_2",
+                                                                    "name": "Spooky"
+                                                                },
+                                                                {
+                                                                    "entity": "scene.chill_3",
+                                                                    "name": "Ocean"
+                                                                },
+                                                                {
+                                                                    "entity": "scene.chill_4",
+                                                                    "name": "BBQ"
+                                                                },
+                                                                {
+                                                                    "entity": "scene.chill_5",
+                                                                    "name": "Space"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "horizontal-stack",
+                                            "cards": [
+                                                {
+                                                    "type": "vertical-stack",
+                                                    "cards": [
+                                                        {
+                                                            "type": "markdown",
+                                                            "content": "### LICHT"
+                                                        },
+                                                        {
+                                                            "type": "entities",
+                                                            "entities": [
+                                                                {
+                                                                    "entity": "group.light_apartment_ceiling",
+                                                                    "name": "Alle (Decke)",
+                                                                    "icon": "hass:lightbulb"
+                                                                },
+                                                                {
+                                                                    "entity": "script.light_reset",
+                                                                    "name": "Reset",
+                                                                    "icon": "mdi:restart"
+                                                                },
+                                                                {
+                                                                    "entity": "scene.light_off",
+                                                                    "name": "Aus"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "horizontal-stack",
+                                                    "cards": [
+                                                        {
+                                                            "type": "vertical-stack",
+                                                            "cards": [
+                                                                {
+                                                                    "type": "markdown",
+                                                                    "content": "### HEIZUNG"
+                                                                },
+                                                                {
+                                                                    "type": "entities",
+                                                                    "entities": [
+                                                                        {
+                                                                            "entity": "script.climate_auto_apartment",
+                                                                            "name": "Auto",
+                                                                            "icon": "mdi:autorenew"
+                                                                        },
+                                                                        {
+                                                                            "entity": "script.climate_boost_apartment",
+                                                                            "name": "Boost",
+                                                                            "icon": "mdi:timer-outline"
+                                                                        },
+                                                                        {
+                                                                            "entity": "script.climate_comfort_apartment",
+                                                                            "name": "Comfort",
+                                                                            "icon": "mdi:heart"
+                                                                        },
+                                                                        {
+                                                                            "entity": "script.climate_eco_apartment",
+                                                                            "name": "Eco",
+                                                                            "icon": "mdi:leaf"
+                                                                        },
+                                                                        {
+                                                                            "entity": "script.climate_away_apartment",
+                                                                            "name": "Away",
+                                                                            "icon": "mdi:bag-suitcase"
+                                                                        },
+                                                                        {
+                                                                            "entity": "script.climate_on_apartment",
+                                                                            "name": "An (voll)",
+                                                                            "icon": "mdi:power-plug"
+                                                                        },
+                                                                        {
+                                                                            "entity": "script.climate_off_apartment",
+                                                                            "name": "Aus",
+                                                                            "icon": "mdi:power-plug-off"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "",
+                    "path": "lights",
+                    "panel": true,
+                    "icon": "mdi:lightbulb",
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "vertical-stack",
+                            "cards": [
+                                {
+                                    "type": "markdown",
+                                    "content": "## LICHT"
+                                },
+                                {
+                                    "type": "horizontal-stack",
+                                    "cards": [
+                                        {
+                                            "type": "vertical-stack",
+                                            "cards": [
+                                                {
+                                                    "type": "markdown",
+                                                    "content": "### LICHT"
+                                                },
+                                                {
+                                                    "type": "entities",
+                                                    "entities": [
+                                                        {
+                                                            "entity": "group.light_apartment",
+                                                            "icon": "mdi:lightbulb",
+                                                            "name": "Alle"
+                                                        },
+                                                        {
+                                                            "entity": "group.light_apartment_ceiling",
+                                                            "icon": "mdi:lightbulb",
+                                                            "name": "Alle (Decke)"
+                                                        },
+                                                        {
+                                                            "entity": "light.hallway",
+                                                            "name": "Flur"
+                                                        },
+                                                        {
+                                                            "entity": "group.light_livingroom_ceiling",
+                                                            "icon": "mdi:lightbulb"
+                                                        },
+                                                        {
+                                                            "entity": "light.livingroom_1",
+                                                            "name": "Wohnzimmer I"
+                                                        },
+                                                        {
+                                                            "entity": "light.livingroom_2",
+                                                            "name": "Wohnzimmer II"
+                                                        },
+                                                        {
+                                                            "entity": "light.bathroom",
+                                                            "name": "Bad"
+                                                        },
+                                                        {
+                                                            "entity": "light.kitchen",
+                                                            "name": "K\u00fcche"
+                                                        },
+                                                        {
+                                                            "entity": "light.loggia",
+                                                            "name": "Loggia"
+                                                        },
+                                                        {
+                                                            "entity": "light.bedroom",
+                                                            "name": "Schlafzimmer"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "vertical-stack",
+                                            "cards": [
+                                                {
+                                                    "type": "markdown",
+                                                    "content": "### MODES"
+                                                },
+                                                {
+                                                    "type": "entities",
+                                                    "entities": [
+                                                        {
+                                                            "entity": "scene.nightlight",
+                                                            "icon": "mdi:weather-night",
+                                                            "name": "Nightlight"
+                                                        },
+                                                        {
+                                                            "entity": "scene.white",
+                                                            "icon": "mdi:white-balance-sunny",
+                                                            "name": "White"
+                                                        }
+                                                    ],
+                                                    "state_color": false,
+                                                    "show_header_toggle": false
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "vertical-stack",
+                                            "cards": [
+                                                {
+                                                    "type": "markdown",
+                                                    "content": "### DECKENFLUTER"
+                                                },
+                                                {
+                                                    "type": "entities",
+                                                    "entities": [
+                                                        {
+                                                            "entity": "switch.livingroom_uplighter",
+                                                            "name": "Wohnzimmer",
+                                                            "icon": "mdi:floor-lamp-variant"
+                                                        },
+                                                        {
+                                                            "entity": "switch.loggia_uplighter",
+                                                            "name": "Loggia",
+                                                            "icon": "mdi:floor-lamp-variant"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "vertical-stack",
+                                            "cards": [
+                                                {
+                                                    "type": "markdown",
+                                                    "content": "### LAMPEN"
+                                                },
+                                                {
+                                                    "type": "entities",
+                                                    "entities": [
+                                                        {
+                                                            "entity": "switch.livingroom_desklamp",
+                                                            "name": "Schreibtischlampe",
+                                                            "icon": "mdi:desk-lamp"
+                                                        },
+                                                        {
+                                                            "entity": "light.livingroom_desklamp",
+                                                            "name": "Schreibtischlampe",
+                                                            "icon": "mdi:desk-lamp"
+                                                        },
+                                                        {
+                                                            "entity": "switch.livingroom_globe",
+                                                            "name": "Globus",
+                                                            "icon": "mdi:desk-lamp"
+                                                        },
+                                                        {
+                                                            "entity": "switch.bedroom_nightbulb",
+                                                            "name": "Nachtlicht",
+                                                            "icon": "mdi:desk-lamp"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "",
+                    "path": "heating",
+                    "panel": true,
+                    "icon": "mdi:thermometer",
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "vertical-stack",
+                            "cards": [
+                                {
+                                    "type": "markdown",
+                                    "content": "## HEIZUNG"
+                                },
+                                {
+                                    "type": "horizontal-stack",
+                                    "cards": [
+                                        {
+                                            "type": "thermostat",
+                                            "entity": "climate.wohnzimmer_wandthermostat",
+                                            "name": "Wohnzimmer"
+                                        },
+                                        {
+                                            "type": "thermostat",
+                                            "entity": "climate.hobbyraum_wandthermostat",
+                                            "name": "Hobbyraum"
+                                        },
+                                        {
+                                            "type": "thermostat",
+                                            "entity": "climate.kuche_wandthermostat",
+                                            "name": "K\u00fcche"
+                                        },
+                                        {
+                                            "type": "thermostat",
+                                            "entity": "climate.bad_wandthermostat",
+                                            "name": "Bad"
+                                        },
+                                        {
+                                            "type": "thermostat",
+                                            "entity": "climate.schlafzimmer_wandthermostat",
+                                            "name": "Schlafzimmer"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "horizontal-stack",
+                                    "cards": [
+                                        {
+                                            "type": "button",
+                                            "tap_action": {
+                                                "action": "call-service",
+                                                "service": "climate.set_hvac_mode",
+                                                "service_data": {
+                                                    "entity_id": "group.climate_apartment",
+                                                    "hvac_mode": "auto"
+                                                }
+                                            },
+                                            "entity": "group.climate_apartment",
+                                            "name": "Auto",
+                                            "icon": "mdi:calendar-sync-outline"
+                                        },
+                                        {
+                                            "type": "button",
+                                            "tap_action": {
+                                                "action": "call-service",
+                                                "service": "climate.set_preset_mode",
+                                                "service_data": {
+                                                    "entity_id": "group.climate_apartment",
+                                                    "preset_mode": "boost"
+                                                }
+                                            },
+                                            "entity": "group.climate_apartment",
+                                            "name": "Boost",
+                                            "icon": "mdi:arm-flex"
+                                        },
+                                        {
+                                            "type": "button",
+                                            "tap_action": {
+                                                "action": "call-service",
+                                                "service": "climate.set_preset_mode",
+                                                "service_data": {
+                                                    "entity_id": "group.climate_apartment",
+                                                    "preset_mode": "comfort"
+                                                }
+                                            },
+                                            "entity": "group.climate_apartment",
+                                            "name": "Comfort",
+                                            "icon": "mdi:heart"
+                                        },
+                                        {
+                                            "type": "button",
+                                            "tap_action": {
+                                                "action": "call-service",
+                                                "service": "climate.set_preset_mode",
+                                                "service_data": {
+                                                    "entity_id": "group.climate_apartment",
+                                                    "preset_mode": "eco"
+                                                }
+                                            },
+                                            "entity": "group.climate_apartment",
+                                            "name": "Eco",
+                                            "icon": "mdi:leaf"
+                                        },
+                                        {
+                                            "type": "button",
+                                            "tap_action": {
+                                                "action": "call-service",
+                                                "service": "climate.set_hvac_mode",
+                                                "service_data": {
+                                                    "entity_id": "group.climate_apartment",
+                                                    "preset_mode": "away"
+                                                }
+                                            },
+                                            "entity": "group.climate_apartment",
+                                            "name": "Away",
+                                            "icon": "mdi:arrow-left-bold-circle-outline"
+                                        },
+                                        {
+                                            "type": "button",
+                                            "tap_action": {
+                                                "action": "call-service",
+                                                "service": "climate.set_preset_mode",
+                                                "service_data": {
+                                                    "entity_id": "group.climate_apartment",
+                                                    "preset_mode": "on"
+                                                }
+                                            },
+                                            "entity": "group.climate_apartment",
+                                            "name": "On",
+                                            "icon": "mdi:check-circle-outline"
+                                        },
+                                        {
+                                            "type": "button",
+                                            "tap_action": {
+                                                "action": "call-service",
+                                                "service": "climate.set_hvac_mode",
+                                                "service_data": {
+                                                    "entity_id": "group.climate_apartment",
+                                                    "hvac_mode": "off"
+                                                }
+                                            },
+                                            "entity": "group.climate_apartment",
+                                            "name": "Off",
+                                            "icon": "mdi:alert-circle-outline"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "icon": "hass:remote",
+                    "panel": true,
+                    "path": "remote",
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "vertical-stack",
+                            "cards": [
+                                {
+                                    "type": "markdown",
+                                    "content": "## HARMONY HUB"
+                                },
+                                {
+                                    "type": "horizontal-stack",
+                                    "cards": [
+                                        {
+                                            "type": "button",
+                                            "show_name": false,
+                                            "name": "Power",
+                                            "icon": "mdi:power",
+                                            "tap_action": {
+                                                "action": "call-service",
+                                                "service": "input_select.select_option",
+                                                "service_data": {
+                                                    "entity_id": "input_select.remote_harmony",
+                                                    "option": "PowerOff"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "type": "button",
+                                            "tap_action": {
+                                                "action": "call-service",
+                                                "service": "input_select.select_option",
+                                                "service_data": {
+                                                    "entity_id": "input_select.remote_harmony",
+                                                    "option": "DVD/Bluray"
+                                                }
+                                            },
+                                            "icon": "mdi:play",
+                                            "name": "DVD/Blueray",
+                                            "show_name": false
+                                        },
+                                        {
+                                            "type": "button",
+                                            "tap_action": {
+                                                "action": "call-service",
+                                                "service": "input_select.select_option",
+                                                "service_data": {
+                                                    "entity_id": "input_select.remote_harmony",
+                                                    "option": "Fire TV"
+                                                }
+                                            },
+                                            "icon": "mdi:television",
+                                            "name": "Fire TV",
+                                            "show_name": false
+                                        },
+                                        {
+                                            "type": "button",
+                                            "tap_action": {
+                                                "action": "call-service",
+                                                "service": "input_select.select_option",
+                                                "service_data": {
+                                                    "entity_id": "input_select.remote_harmony",
+                                                    "option": "Radio"
+                                                }
+                                            },
+                                            "icon": "mdi:radio",
+                                            "name": "Radio",
+                                            "show_name": false
+                                        },
+                                        {
+                                            "type": "button",
+                                            "tap_action": {
+                                                "action": "call-service",
+                                                "service": "input_select.select_option",
+                                                "service_data": {
+                                                    "entity_id": "input_select.remote_harmony",
+                                                    "option": "Zattoo"
+                                                }
+                                            },
+                                            "icon": "mdi:television-box",
+                                            "name": "Zattoo",
+                                            "show_name": false
+                                        },
+                                        {
+                                            "type": "button",
+                                            "tap_action": {
+                                                "action": "call-service",
+                                                "service": "input_select.select_option",
+                                                "service_data": {
+                                                    "entity_id": "input_select.remote_harmony",
+                                                    "option": "Plattenspieler"
+                                                }
+                                            },
+                                            "icon": "mdi:disc",
+                                            "name": "Plattenspieler",
+                                            "show_name": false
+                                        },
+                                        {
+                                            "type": "button",
+                                            "tap_action": {
+                                                "action": "call-service",
+                                                "service": "input_select.select_option",
+                                                "service_data": {
+                                                    "entity_id": "input_select.remote_harmony",
+                                                    "option": "Chromecast"
+                                                }
+                                            },
+                                            "icon": "mdi:cast",
+                                            "name": "Chromecast",
+                                            "show_name": false
+                                        },
+                                        {
+                                            "type": "button",
+                                            "tap_action": {
+                                                "action": "call-service",
+                                                "service": "input_select.select_option",
+                                                "service_data": {
+                                                    "entity_id": "input_select.remote_harmony",
+                                                    "option": "PC spiegeln"
+                                                }
+                                            },
+                                            "icon": "mdi:laptop",
+                                            "name": "PC spiegeln",
+                                            "show_name": false
+                                        },
+                                        {
+                                            "type": "button",
+                                            "tap_action": {
+                                                "action": "call-service",
+                                                "service": "input_select.select_option",
+                                                "service_data": {
+                                                    "entity_id": "input_select.remote_harmony",
+                                                    "option": "Xbox"
+                                                }
+                                            },
+                                            "icon": "mdi:gamepad",
+                                            "name": "Xbox",
+                                            "show_name": false
+                                        },
+                                        {
+                                            "type": "button",
+                                            "tap_action": {
+                                                "action": "call-service",
+                                                "service": "input_select.select_option",
+                                                "service_data": {
+                                                    "entity_id": "input_select.remote_harmony",
+                                                    "option": "Klimaanlage"
+                                                }
+                                            },
+                                            "icon": "hass:snowflake",
+                                            "name": "Klimaanlage",
+                                            "show_name": false
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "icon": "mdi:devices",
+                    "path": "devices",
+                    "panel": true,
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "vertical-stack",
+                            "cards": [
+                                {
+                                    "type": "markdown",
+                                    "content": "## MOBILE"
+                                },
+                                {
+                                    "type": "horizontal-stack",
+                                    "cards": [
+                                        {
+                                            "type": "vertical-stack",
+                                            "cards": [
+                                                {
+                                                    "type": "horizontal-stack",
+                                                    "cards": [
+                                                        {
+                                                            "type": "markdown",
+                                                            "content": "### MOLECULE"
+                                                        },
+                                                        {
+                                                            "type": "markdown",
+                                                            "content": "### PAD"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "horizontal-stack",
+                                                    "cards": [
+                                                        {
+                                                            "type": "entities",
+                                                            "entities": [
+                                                                {
+                                                                    "entity": "sensor.molecule_geokodierter_standort",
+                                                                    "name": "Standort"
+                                                                },
+                                                                {
+                                                                    "entity": "sensor.molecule_akkufullstand",
+                                                                    "name": "Akkuf\u00fcllstand"
+                                                                },
+                                                                {
+                                                                    "entity": "sensor.molecule_akkustatus",
+                                                                    "name": "Akkustatus"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "entities",
+                                                            "entities": [
+                                                                {
+                                                                    "entity": "sensor.pad_geokodierter_standort",
+                                                                    "name": "Standort"
+                                                                },
+                                                                {
+                                                                    "entity": "sensor.pad_akkufullstand",
+                                                                    "name": "Akkuf\u00fcllstand"
+                                                                },
+                                                                {
+                                                                    "entity": "sensor.pad_akkustatus",
+                                                                    "name": "Akkustatus"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "vertical-stack",
+                                            "cards": [
+                                                {
+                                                    "type": "map",
+                                                    "entities": [
+                                                        {
+                                                            "entity": "device_tracker.pad"
+                                                        },
+                                                        {
+                                                            "entity": "device_tracker.molecule"
+                                                        }
+                                                    ],
+                                                    "hours_to_show": 0,
+                                                    "dark_mode": true
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "icon": "mdi:printer-wireless",
+                    "path": "printer",
+                    "panel": true,
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "vertical-stack",
+                            "cards": [
+                                {
+                                    "type": "markdown",
+                                    "content": "## DRUCKER"
+                                },
+                                {
+                                    "type": "horizontal-stack",
+                                    "cards": [
+                                        {
+                                            "type": "vertical-stack",
+                                            "cards": [
+                                                {
+                                                    "type": "markdown",
+                                                    "content": "### STATUS"
+                                                },
+                                                {
+                                                    "type": "entities",
+                                                    "entities": [
+                                                        {
+                                                            "entity": "sensor.mfc_9142cdn_status",
+                                                            "name": "Status"
+                                                        },
+                                                        {
+                                                            "entity": "sensor.mfc_9142cdn_page_counter",
+                                                            "name": "Gedruckte Seiten"
+                                                        },
+                                                        {
+                                                            "entity": "sensor.mfc_9142cdn_b_w_counter",
+                                                            "name": "Gedruckte Seiten (s/w)"
+                                                        },
+                                                        {
+                                                            "entity": "sensor.mfc_9142cdn_color_counter",
+                                                            "name": "Gedruckte Seiten (farbig)"
+                                                        },
+                                                        {
+                                                            "entity": "sensor.mfc_9142cdn_belt_unit_remaining_life",
+                                                            "name": "Lebenszeit Belt Unit"
+                                                        },
+                                                        {
+                                                            "entity": "sensor.mfc_9142cdn_fuser_remaining_life",
+                                                            "name": "Lebenszeit Fuser"
+                                                        },
+                                                        {
+                                                            "entity": "sensor.mfc_9142cdn_pf_kit_1_remaining_life",
+                                                            "name": "Lebenszeit PF Kit 1"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "horizontal-stack",
+                                            "cards": [
+                                                {
+                                                    "type": "vertical-stack",
+                                                    "cards": [
+                                                        {
+                                                            "type": "markdown",
+                                                            "content": "### SCHWARZ"
+                                                        },
+                                                        {
+                                                            "type": "entities",
+                                                            "entities": [
+                                                                {
+                                                                    "entity": "sensor.mfc_9142cdn_black_toner_remaining",
+                                                                    "name": "Toner"
+                                                                },
+                                                                {
+                                                                    "entity": "sensor.mfc_9142cdn_black_drum_remaining_life",
+                                                                    "name": "Drum"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "markdown",
+                                                            "content": "### CYAN"
+                                                        },
+                                                        {
+                                                            "type": "entities",
+                                                            "entities": [
+                                                                {
+                                                                    "entity": "sensor.mfc_9142cdn_cyan_toner_remaining",
+                                                                    "name": "Toner"
+                                                                },
+                                                                {
+                                                                    "entity": "sensor.mfc_9142cdn_cyan_drum_remaining_life",
+                                                                    "name": "Drum"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "horizontal-stack",
+                                            "cards": [
+                                                {
+                                                    "type": "vertical-stack",
+                                                    "cards": [
+                                                        {
+                                                            "type": "markdown",
+                                                            "content": "### MAGENTA"
+                                                        },
+                                                        {
+                                                            "type": "entities",
+                                                            "entities": [
+                                                                {
+                                                                    "entity": "sensor.mfc_9142cdn_magenta_toner_remaining",
+                                                                    "name": "Toner"
+                                                                },
+                                                                {
+                                                                    "entity": "sensor.mfc_9142cdn_magenta_drum_remaining_life",
+                                                                    "name": "Drum"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "markdown",
+                                                            "content": "### YELLOW"
+                                                        },
+                                                        {
+                                                            "type": "entities",
+                                                            "entities": [
+                                                                {
+                                                                    "entity": "sensor.mfc_9142cdn_yellow_toner_remaining",
+                                                                    "name": "Toner"
+                                                                },
+                                                                {
+                                                                    "entity": "sensor.mfc_9142cdn_yellow_drum_remaining_life",
+                                                                    "name": "Drum"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "path": "nas",
+                    "icon": "mdi:nas",
+                    "panel": true,
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "vertical-stack",
+                            "cards": [
+                                {
+                                    "type": "markdown",
+                                    "content": "## NETWORK ATTACHED STORAGES"
+                                },
+                                {
+                                    "type": "markdown",
+                                    "content": "### SYNOLOGY DS416"
+                                },
+                                {
+                                    "type": "horizontal-stack",
+                                    "cards": [
+                                        {
+                                            "type": "vertical-stack",
+                                            "cards": [
+                                                {
+                                                    "type": "markdown",
+                                                    "content": "### STATUS"
+                                                },
+                                                {
+                                                    "type": "entities",
+                                                    "entities": [
+                                                        {
+                                                            "entity": "binary_sensor.raid_security_status",
+                                                            "name": "Sicherheit"
+                                                        },
+                                                        {
+                                                            "entity": "binary_sensor.raid_update_available",
+                                                            "name": "Aktualisierung"
+                                                        },
+                                                        {
+                                                            "entity": "sensor.raid_network_down",
+                                                            "name": "Download"
+                                                        },
+                                                        {
+                                                            "entity": "sensor.raid_network_up",
+                                                            "name": "Upload"
+                                                        },
+                                                        {
+                                                            "entity": "sensor.raid_temperature",
+                                                            "name": "Temperatur"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "vertical-stack",
+                                            "cards": [
+                                                {
+                                                    "type": "markdown",
+                                                    "content": "### CPU"
+                                                },
+                                                {
+                                                    "type": "entities",
+                                                    "entities": [
+                                                        {
+                                                            "entity": "sensor.raid_cpu_load_15_min",
+                                                            "name": "15 Min"
+                                                        },
+                                                        {
+                                                            "entity": "sensor.raid_cpu_load_5_min",
+                                                            "name": "5 Min"
+                                                        },
+                                                        {
+                                                            "entity": "sensor.raid_cpu_load_total",
+                                                            "name": "Total"
+                                                        },
+                                                        {
+                                                            "entity": "sensor.raid_cpu_load_user",
+                                                            "name": "User"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "vertical-stack",
+                                            "cards": [
+                                                {
+                                                    "type": "markdown",
+                                                    "content": "### MEMORY"
+                                                },
+                                                {
+                                                    "type": "entities",
+                                                    "entities": [
+                                                        {
+                                                            "entity": "sensor.raid_memory_usage_real",
+                                                            "name": "Benutzt"
+                                                        },
+                                                        {
+                                                            "entity": "sensor.raid_memory_available_real",
+                                                            "name": "Frei"
+                                                        },
+                                                        {
+                                                            "entity": "sensor.raid_memory_total_real",
+                                                            "name": "Gesamt"
+                                                        },
+                                                        {
+                                                            "entity": "sensor.raid_memory_available_swap",
+                                                            "name": "Frei (swap)"
+                                                        },
+                                                        {
+                                                            "entity": "sensor.raid_memory_total_swap",
+                                                            "name": "Gesamt (swap)"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "horizontal-stack",
+                                    "cards": [
+                                        {
+                                            "type": "vertical-stack",
+                                            "cards": [
+                                                {
+                                                    "type": "markdown",
+                                                    "content": "### VOLUME 1"
+                                                },
+                                                {
+                                                    "type": "entities",
+                                                    "entities": [
+                                                        {
+                                                            "entity": "sensor.raid_volume_1_status",
+                                                            "name": "Status"
+                                                        },
+                                                        {
+                                                            "entity": "sensor.raid_volume_1_average_disk_temp",
+                                                            "name": "Temperatur"
+                                                        },
+                                                        {
+                                                            "entity": "sensor.raid_volume_1_volume_used",
+                                                            "name": "Genutzt %"
+                                                        },
+                                                        {
+                                                            "entity": "sensor.raid_volume_1_used_space",
+                                                            "name": "Genutzt TB"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "vertical-stack",
+                                            "cards": [
+                                                {
+                                                    "type": "markdown",
+                                                    "content": "__DRIVE 1__"
+                                                },
+                                                {
+                                                    "type": "entities",
+                                                    "entities": [
+                                                        {
+                                                            "entity": "sensor.raid_drive_1_status",
+                                                            "name": "Status"
+                                                        },
+                                                        {
+                                                            "entity": "sensor.raid_drive_1_temperature",
+                                                            "name": "Temperatur"
+                                                        },
+                                                        {
+                                                            "entity": "binary_sensor.raid_drive_1_below_min_remaining_life",
+                                                            "name": "Haltbarkeit"
+                                                        },
+                                                        {
+                                                            "entity": "binary_sensor.raid_drive_1_exceeded_max_bad_sectors",
+                                                            "name": "Fehlerhafte Sektoren"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "vertical-stack",
+                                            "cards": [
+                                                {
+                                                    "type": "markdown",
+                                                    "content": "__DRIVE 2__"
+                                                },
+                                                {
+                                                    "type": "entities",
+                                                    "entities": [
+                                                        {
+                                                            "entity": "sensor.raid_drive_2_status",
+                                                            "name": "Status"
+                                                        },
+                                                        {
+                                                            "entity": "sensor.raid_drive_2_temperature",
+                                                            "name": "Temperatur"
+                                                        },
+                                                        {
+                                                            "entity": "binary_sensor.raid_drive_2_below_min_remaining_life",
+                                                            "name": "Haltbarkeit"
+                                                        },
+                                                        {
+                                                            "entity": "binary_sensor.raid_drive_2_exceeded_max_bad_sectors",
+                                                            "name": "Fehlerhafte Sektoren"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "vertical-stack",
+                                            "cards": [
+                                                {
+                                                    "type": "markdown",
+                                                    "content": "__DRIVE 3__"
+                                                },
+                                                {
+                                                    "type": "entities",
+                                                    "entities": [
+                                                        {
+                                                            "entity": "sensor.raid_drive_3_status",
+                                                            "name": "Status"
+                                                        },
+                                                        {
+                                                            "entity": "sensor.raid_drive_3_temperature",
+                                                            "name": "Temperatur"
+                                                        },
+                                                        {
+                                                            "entity": "binary_sensor.raid_drive_3_below_min_remaining_life",
+                                                            "name": "Haltbarkeit"
+                                                        },
+                                                        {
+                                                            "entity": "binary_sensor.raid_drive_3_exceeded_max_bad_sectors",
+                                                            "name": "Fehlerhafte Sektoren"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "vertical-stack",
+                                            "cards": [
+                                                {
+                                                    "type": "markdown",
+                                                    "content": "__DRIVE 4__"
+                                                },
+                                                {
+                                                    "type": "entities",
+                                                    "entities": [
+                                                        {
+                                                            "entity": "sensor.raid_drive_4_status",
+                                                            "name": "Status"
+                                                        },
+                                                        {
+                                                            "entity": "sensor.raid_drive_4_temperature",
+                                                            "name": "Temperatur"
+                                                        },
+                                                        {
+                                                            "entity": "binary_sensor.raid_drive_4_below_min_remaining_life",
+                                                            "name": "Haltbarkeit"
+                                                        },
+                                                        {
+                                                            "entity": "binary_sensor.raid_drive_4_exceeded_max_bad_sectors",
+                                                            "name": "Fehlerhafte Sektoren"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "icon": "mdi:gamepad",
+                    "path": "gaming",
+                    "panel": true,
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "vertical-stack",
+                            "cards": [
+                                {
+                                    "type": "horizontal-stack",
+                                    "cards": [
+                                        {
+                                            "type": "entities",
+                                            "entities": [
+                                                {
+                                                    "entity": "sensor.marfis"
+                                                }
+                                            ],
+                                            "state_color": false,
+                                            "show_header_toggle": false
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "title": "HAMSTER"
+        }
+    }
+}

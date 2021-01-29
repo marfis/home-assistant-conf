@@ -1,5 +1,5 @@
-- host: raid.fritz.box
+- host: !secret SYNOLOGY_DSM_HOST_1
   ssl: true
   verify_ssl: false
-  username: !secret SYNOLOGY_DSM_USERNAME
-  password: !secret SYNOLOGY_DSM_PASSWORD
+  username: !secret SYNOLOGY_DSM_USERNAME_1
+  password: !secret SYNOLOGY_DSM_PASSWORD_1

@@ -4,6 +4,12 @@ livingroom_desklamp:
     - switch.livingroom_desklamp
     - light.livingroom_desklamp
 
+livingroom_globe:
+  name: Globus
+  entities:
+    - switch.livingroom_globe
+    - light.50450440f4cfa21eec11
+
 light_livingroom_ceiling:
   name: Wohnzimmer
   entities:
@@ -15,7 +21,7 @@ light_livingroom:
   entities:
     - group.light_livingroom_ceiling
     - switch.livingroom_uplighter
-    - switch.livingroom_globe
+    - group.livingroom_globe
     - group.livingroom_desklamp
 
 light_kitchenarea:
@@ -49,17 +55,27 @@ light_apartment_ceiling:
     - light.bathroom
     - light.hallway
 
+light_apartment:
+  name: Licht
+  entities:
+    - light.hallway
+    - light.bathroom
+    - light.bedroom
+    - group.light_livingroom
+    - group.light_kitchenarea
+    - switch.livingroom_uplighter
+    - group.livingroom_globe
+    - group.livingroom_desklamp
+
 livingroom:
   name: Wohnzimmer
   entities:
-    - climate.wohnzimmer_heizung
     - climate.wohnzimmer_wandthermostat
     - group.light_livingroom
 
 kitchen:
   name: Küche
   entities:
-    - climate.kuche_heizung
     - climate.kuche_wandthermostat
     - light.kitchen
 
@@ -72,22 +88,19 @@ loggia:
 bedroom:
   name: Schlafzimmer
   entities:
-    - switch.bedroom_nightbulb
-    - climate.schlafzimmer_heizung
+    - switch.bedroom_lamp
     - climate.schlafzimmer_wandthermostat
     - light.bedroom
 
 bathroom:
   name: Bad
   entities:
-    - climate.bad_heizung
     - climate.bad_wandthermostat
     - light.bathroom
 
 workroom:
   name: Hobbyraum
   entities:
-    - climate.hobbyraum_heizung
     - climate.hobbyraum_wandthermostat
 
 hallway:
@@ -106,56 +119,11 @@ apartment:
     - group.kitchen
     - group.loggia
 
-climate_livingroom:
-  name: Heizung Wohnzimmer
-  entities:
-    - climate.wohnzimmer_heizung
-    - climate.wohnzimmer_wandthermostat
-
-climate_kitchen:
-  name: Küche
-  entities:
-    - climate.kuche_heizung
-    - climate.kuche_wandthermostat
-
-climate_bedroom:
-  name: Schlafzimmer
-  entities:
-    - climate.schlafzimmer_heizung
-    - climate.schlafzimmer_wandthermostat
-
-climate_bathroom:
-  name: Badezimmer
-  entities:
-    - climate.bad_heizung
-    - climate.bad_wandthermostat
-
-climate_workroom:
-  name: Arbeitszimmer
-  entities:
-    - climate.hobbyraum_heizung
-    - climate.hobbyraum_wandthermostat
-
 climate_apartment:
   name: Heizung
   entities:
-    - climate.hobbyraum_heizung
     - climate.hobbyraum_wandthermostat
-    - climate.bad_heizung
     - climate.bad_wandthermostat
-    - climate.schlafzimmer_heizung
     - climate.schlafzimmer_wandthermostat
-    - climate.kuche_heizung
     - climate.kuche_wandthermostat
-    - climate.wohnzimmer_heizung
     - climate.wohnzimmer_wandthermostat
-
-light_apartment:
-  name: Licht
-  entities:
-    - light.hallway
-    - light.bathroom
-    - light.bedroom
-    - light.workroom
-    - group.light_livingroom
-    - group.light_kitchenarea

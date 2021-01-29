@@ -20,6 +20,7 @@ homeassistant:
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: Europe/Berlin
 
+
 # Debug logging
 logger:
 
@@ -40,7 +41,7 @@ tts:
 
 # MQTT support
 mqtt:
-  broker: hamster.fritz.box
+  broker: !secret MQTT_HOST
   port: 1883
   client_id: homeassistant
 
@@ -59,10 +60,10 @@ ifttt:
 
 # PiHole statistics
 # pi_hole:
-#   - host: hole.fritz.box
+#   - host: !secret PI_HOLE_HOST_1
 #     name: hole
 #     verify_ssl: false
-#     api_key: !secret PI_HOLE_1_API_KEY
+#     api_key: !secret PI_HOLE_1_API_KEY_1
 
 # Synology DSM
 synology_dsm: !include devices/synology_dsm.yaml
@@ -77,11 +78,14 @@ maxcube: !include devices/maxcube.yaml
 # MiLight
 light: !include devices/light.yaml
 
-# Switches (433MHz sockets)
+# Broadlink Switches (433MHz sockets)
 switch: !include devices/switch.yaml
 
 # AVM Fritz!SmartHome
 fritzbox: !include devices/fritzbox.yaml
+
+# Tuya
+tuya: !include devices/tuya.yaml
 
 input_select:
   remote_harmony:
@@ -98,6 +102,7 @@ input_select:
     - Xbox
     - Klimaaanlage
 
+zone: !include zones.yaml
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml

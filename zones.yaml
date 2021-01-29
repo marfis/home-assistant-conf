@@ -1,0 +1,52 @@
+- name: Home
+  latitude: !secret LATITUDE
+  longitude: !secret LONGITUDE
+  radius: 15
+  icon: mdi:home-outline
+
+- name: Home Area
+  latitude: !secret LATITUDE
+  longitude: !secret LONGITUDE
+  radius: 1000
+  icon: mdi:home-group
+  passive: true
+
+- name: Steinefrenz
+  latitude: !secret LATITUDE_SF
+  longitude: !secret LONGITUDE_SF
+  radius: 20
+  icon: mdi:home-outline
+
+- name: Steinefrenz Area
+  latitude: !secret LATITUDE_SF
+  longitude: !secret LONGITUDE_SF
+  radius: 1000
+  icon: mdi:home-group
+  passive: true
+
+- name: Doro
+  latitude: !secret LATITUDE_DORO
+  longitude: !secret LONGITUDE_DORO
+  radius: 15
+  icon: mdi:home-outline
+
+- name: Doro Area
+  latitude: !secret LATITUDE_DORO
+  longitude: !secret LONGITUDE_DORO
+  radius: 1000
+  icon: mdi:home-group
+  passive: true
+
+- name: Stuttgart Area
+  latitude: !secret LATITUDE
+  longitude: !secret LONGITUDE
+  radius: 13841
+  icon: mdi:home-city-outline
+  passive: true
+
+- name: Stuttgart Agglomoration
+  latitude: !secret LATITUDE
+  longitude: !secret LONGITUDE
+  radius: 20000
+  icon: mdi:city-variant-outline
+  passive: true

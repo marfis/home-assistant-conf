@@ -1,4 +1,4 @@
-- name: cosy_light
+- name: chill_0
   icon: "mdi:flower-tulip"
   entities:
     light.livingroom_1:
@@ -16,7 +16,7 @@
       hvac_mode: "heat"
       preset_mode: "comfort"
 
-- name: cosy_dark
+- name: tv
   icon: "mdi:flower-tulip"
   entities:
     light.livingroom_1:
@@ -39,11 +39,11 @@
   entities:
     light.livingroom_1:
       state: "on"
-      hs_color: [ 240, 100 ]
+      hs_color: [ 300, 100 ]
       brightness: 100
     light.livingroom_2:
       state: "on"
-      hs_color: [ 255, 100 ]
+      hs_color: [ 336, 100 ]
       brightness: 100
     remote.harmony:
       state: "on"
@@ -57,11 +57,11 @@
   entities:
     light.livingroom_1:
       state: "on"
-      hs_color: [ 240, 100 ]
+      hs_color: [ 90, 100 ]
       brightness: 100
     light.livingroom_2:
       state: "on"
-      hs_color: [ 255, 100 ]
+      hs_color: [ 150, 50 ]
       brightness: 100
     remote.harmony:
       state: "on"
@@ -75,11 +75,11 @@
   entities:
     light.livingroom_1:
       state: "on"
-      hs_color: [ 240, 100 ]
+      hs_color: [ 40, 100 ]
       brightness: 100
     light.livingroom_2:
       state: "on"
-      hs_color: [ 255, 100 ]
+      hs_color: [ 220, 60 ]
       brightness: 100
     remote.harmony:
       state: "on"
@@ -93,11 +93,11 @@
   entities:
     light.livingroom_1:
       state: "on"
-      hs_color: [ 240, 100 ]
+      hs_color: [ 15, 100 ]
       brightness: 100
     light.livingroom_2:
       state: "on"
-      hs_color: [ 255, 100 ]
+      hs_color: [ 0, 100 ]
       brightness: 100
     remote.harmony:
       state: "on"
@@ -112,11 +112,11 @@
     light.livingroom_1:
       state: "on"
       hs_color: [ 240, 100 ]
-      brightness: 100
+      brightness: 30
     light.livingroom_2:
       state: "on"
       hs_color: [ 255, 100 ]
-      brightness: 100
+      brightness: 13
     remote.harmony:
       state: "on"
     group.climate_apartment:
@@ -129,28 +129,24 @@
   entities:
     group.light_apartment:
       state: "off"
-    switch.bedroom_nightbulb:
+    switch.bedroom_lamp:
       state: "on"
     light.bathroom:
       state: "on"
     light.hallway:
       state: "on"
-    group.climate_apartment:
-      state: "on"
-      hvac_mode: "auto"
-      preset_mode: "eco"
+      effect: "night"
 
 - name: sleep
   icon: "mdi:sleep"
   entities:
     group.light_apartment:
       state: "off"
-    switch.bedroom_nightbulb:
+    switch.bedroom_lamp:
       state: "on"
     group.climate_apartment:
       state: "on"
       hvac_mode: "auto"
-      preset_mode: "eco"
 
 - name: work
   icon: "mdi:desk"
@@ -163,27 +159,24 @@
       brightness: 150
     group.climate_apartment:
       state: "on"
-      hvac_mode: "heat"
       preset_mode: "eco"
 
 - name: away
-  icon: "mdi:arrow-left-bold-circle-outline"
+  icon: "mdi:bag-suitcase"
   entities:
     group.light_apartment:
       state: "off"
     group.climate_apartment:
       state: "on"
-      hvac_mode: "heat"
       preset_mode: "away"
-      temperature: 12
 
-- name: white
+- name: light_white
   entities:
     group.light_apartment:
       state: "on"
       effect: "white"
 
-- name: nightlight
+- name: light_nightlight
   entities:
     group.light_nightlight:
       state: "on"
@@ -193,44 +186,9 @@
     light.loggia:
       state: "off"
 
-- name: reset
-  icon: "mdi:restart"
-  entities:
-    light.light_apartment:
-      state: "on"
-      effect: "white"
-    group.light_apartment:
-      state: "off"
-    light.hallway:
-      state: "on"
-      effect: "white"
-    group.light_livingroom:
-      state: "on"
-      effect: "white"
-    group.climate_apartment:
-      state: "on"
-      hvac_mode: "auto"
-
 - name: apartment_off
   icon: "mdi:power-plug-off"
   entities:
     group.apartment:
       state: "off"
 
-- name: climate_off
-  icon: "mdi:power-plug-off"
-  entities:
-    group.climate_apartment:
-      state: "off"
-
-- name: light_off
-  icon: "mdi:power-plug-off"
-  entities:
-    group.light_apartment:
-      state: "off"
-
-- name: light_ceiling_off
-  icon: "mdi:power-plug-off"
-  entities:
-    group.light_apartment_ceiling:
-      state: "off"

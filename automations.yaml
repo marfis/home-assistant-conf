@@ -1,3 +1,37 @@
+# Actions
+
+- alias: "Coming Home (Area)"
+  trigger:
+    platform: zone
+    entity_id: device_tracker.molecule
+    zone: zone.home_area
+    event: enter
+  action:
+    service: script.turn_on
+    entity_id: script.coming_home_area
+
+- alias: "Leaving Home (Area)"
+  trigger:
+    platform: zone
+    entity_id: device_tracker.molecule
+    zone: zone.home_area
+    event: leave
+  action:
+    service: script.turn_on
+    entity_id: script.leaving_home_area
+
+- alias: "Coming Home"
+  trigger:
+    platform: zone
+    entity_id: device_tracker.molecule
+    zone: zone.home
+    event: enter
+  action:
+    service: script.turn_on
+    entity_id: script.coming_home
+
+# Harmony Hub
+
 - alias: "Power Off"
   trigger:
     platform: state
@@ -98,57 +132,3 @@
     entity_id: remote.harmony
     data:
       activity: "Klimaanlage"
-
-#- alias: "Heizung Winter"
-#  trigger:
-#    platform: time_pattern
-#    hours: '/1'
-#  condition:
-#    condition: numeric_state
-#    entity_id: weather.hamster
-#    attribute: temperature
-#    below: 14
-#  action:
-#    service: script.turn_on
-#    entity_id: script.climate_winter_apartment
-#
-#- alias: "Heizung Herbst"
-#  trigger:
-#    platform: time_pattern
-#    hours: '/1'
-#  condition:
-#    condition: numeric_state
-#    entity_id: weather.hamster
-#    attribute: temperature
-#    above: 14
-#    below: 17
-#  action:
-#    service: script.turn_on
-#    entity_id: script.climate_autumn_apartment
-#
-#- alias: "Heizung Frühjahr"
-#  trigger:
-#    platform: time_pattern
-#    hours: '/1'
-#  condition:
-#    condition: numeric_state
-#    entity_id: weather.hamster
-#    attribute: temperature
-#    above: 17
-#    below: 21
-#  action:
-#    service: script.turn_on
-#    entity_id: script.climate_spring_apartment
-#
-#- alias: "Heizung Sommer"
-#  trigger:
-#    platform: time_pattern
-#    hours: '/1'
-#  condition:
-#    condition: numeric_state
-#    entity_id: weather.hamster
-#    attribute: temperature
-#    above: 21
-#  action:
-#    service: script.turn_on
-#    entity_id: script.climate_summer_apartment

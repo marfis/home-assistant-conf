@@ -1,6 +1,6 @@
 platform: limitlessled
 bridges:
-  - host: light-2.fritz.box
+  - host: !secret LIMITLESSLED_HOST_1
     groups:
       - number: 1
         type: rgbww
@@ -14,7 +14,7 @@ bridges:
       - number: 4
         type: rgbww
         name: hallway
-  - host: light-1.fritz.box
+  - host: !secret LIMITLESSLED_HOST_2
     groups:
       - number: 1
         type: rgbww

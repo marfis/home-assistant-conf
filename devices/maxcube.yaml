@@ -1,4 +1,4 @@
 gateways:        
-  - host: heating.fritz.box
+  - host: !secret MAXCUBE_HOST_1
     port: 62910
     scan_interval: 900

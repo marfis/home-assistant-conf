@@ -30,7 +30,7 @@
   name: RPi Power Status
   command: "./scripts/rpi_power_status.sh"
 
-- platform: xbox_live
-  api_key: !secret XAPI_API_KEY
-  xuid:
-    - !secret XAPI_USER_ID
+# - platform: xbox_live
+#   api_key: !secret XAPI_API_KEY
+#   xuid:
+#     - !secret XAPI_USER_ID

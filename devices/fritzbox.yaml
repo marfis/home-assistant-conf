@@ -1,7 +1,7 @@
 devices:
-  - username: !secret FRITZBOX_USERNAME
-    password: !secret FRITZBOX_PASSWORD
-    host: sesam.fritz.box
-  - username: !secret FRITZBOX_USERNAME
-    password: !secret FRITZBOX_PASSWORD
-    host: crack.fritz.box
+  - username: !secret FRITZBOX_USERNAME_1
+    password: !secret FRITZBOX_PASSWORD_1
+    host: !secret FRITZBOX_HOST_1
+  - username: !secret FRITZBOX_USERNAME_2
+    password: !secret FRITZBOX_PASSWORD_2
+    host: !secret FRITZBOX_HOST_2

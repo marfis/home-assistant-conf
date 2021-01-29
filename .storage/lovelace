@@ -22,13 +22,38 @@
                                     "type": "horizontal-stack",
                                     "cards": [
                                         {
-                                            "type": "weather-forecast",
-                                            "entity": "weather.hamster",
-                                            "name": "Stuttgart"
-                                        },
-                                        {
                                             "type": "horizontal-stack",
                                             "cards": [
+                                                {
+                                                    "type": "weather-forecast",
+                                                    "entity": "weather.hamster",
+                                                    "name": "Stuttgart"
+                                                },
+                                                {
+                                                    "type": "entities",
+                                                    "entities": [
+                                                        {
+                                                            "entity": "sensor.date",
+                                                            "name": "Datum",
+                                                            "icon": "mdi:calendar-outline"
+                                                        },
+                                                        {
+                                                            "entity": "sensor.time",
+                                                            "name": "Zeit",
+                                                            "icon": "mdi:clock-outline"
+                                                        },
+                                                        {
+                                                            "entity": "sensor.time_utc",
+                                                            "name": "Zeit (UTC)",
+                                                            "icon": "mdi:clock-outline"
+                                                        },
+                                                        {
+                                                            "entity": "sensor.internet_time",
+                                                            "name": "Zeit (Internet)",
+                                                            "icon": "mdi:clock-outline"
+                                                        }
+                                                    ]
+                                                },
                                                 {
                                                     "type": "vertical-stack",
                                                     "cards": [
@@ -41,7 +66,8 @@
                                                             "entities": [
                                                                 {
                                                                     "entity": "sensor.rpi_power_status",
-                                                                    "name": "Power Status"
+                                                                    "name": "Power Status",
+                                                                    "icon": "mdi:flash-outline"
                                                                 },
                                                                 {
                                                                     "entity": "sensor.rpi_cpu_temperature",
@@ -94,12 +120,18 @@
                                                             "type": "entities",
                                                             "entities": [
                                                                 {
+                                                                    "entity": "scene.tv",
+                                                                    "name": "Kino",
+                                                                    "icon": "mdi:television"
+                                                                },
+                                                                {
                                                                     "entity": "scene.work",
                                                                     "name": "Home Office"
                                                                 },
                                                                 {
                                                                     "entity": "scene.goodnight",
-                                                                    "name": "Zu Bett"
+                                                                    "name": "Zu Bett",
+                                                                    "icon": "mdi:bell-sleep-outline"
                                                                 },
                                                                 {
                                                                     "entity": "scene.sleep",
@@ -107,11 +139,13 @@
                                                                 },
                                                                 {
                                                                     "entity": "scene.away",
-                                                                    "name": "Abwesend"
+                                                                    "name": "Abwesend",
+                                                                    "icon": "mdi:bag-suitcase-outline"
                                                                 },
                                                                 {
-                                                                    "entity": "scene.reset",
-                                                                    "name": "Reset"
+                                                                    "entity": "script.light_reset",
+                                                                    "name": "Reset",
+                                                                    "icon": "mdi:restart"
                                                                 }
                                                             ]
                                                         },
@@ -119,12 +153,8 @@
                                                             "type": "entities",
                                                             "entities": [
                                                                 {
-                                                                    "entity": "scene.cosy_light",
-                                                                    "name": "Gem\u00fctlich (hell)"
-                                                                },
-                                                                {
-                                                                    "entity": "scene.cosy_dark",
-                                                                    "name": "Gem\u00fctlich (dunkel)"
+                                                                    "entity": "scene.chill_0",
+                                                                    "name": "Iys"
                                                                 },
                                                                 {
                                                                     "entity": "scene.chill_1",
@@ -132,11 +162,11 @@
                                                                 },
                                                                 {
                                                                     "entity": "scene.chill_2",
-                                                                    "name": "Spooky"
+                                                                    "name": "Garden"
                                                                 },
                                                                 {
                                                                     "entity": "scene.chill_3",
-                                                                    "name": "Ocean"
+                                                                    "name": "Beach"
                                                                 },
                                                                 {
                                                                     "entity": "scene.chill_4",
@@ -166,9 +196,14 @@
                                                             "type": "entities",
                                                             "entities": [
                                                                 {
-                                                                    "entity": "group.light_apartment_ceiling",
-                                                                    "name": "Alle (Decke)",
-                                                                    "icon": "hass:lightbulb"
+                                                                    "entity": "script.light_on_main",
+                                                                    "name": "An (Decke)",
+                                                                    "icon": "mdi:power-plug-outline"
+                                                                },
+                                                                {
+                                                                    "entity": "script.light_off_main",
+                                                                    "name": "Aus (Decke)",
+                                                                    "icon": "mdi:power-plug-outline"
                                                                 },
                                                                 {
                                                                     "entity": "script.light_reset",
@@ -176,8 +211,9 @@
                                                                     "icon": "mdi:restart"
                                                                 },
                                                                 {
-                                                                    "entity": "scene.light_off",
-                                                                    "name": "Aus"
+                                                                    "entity": "script.light_off",
+                                                                    "name": "Aus",
+                                                                    "icon": "mdi:power-plug-off-outline"
                                                                 }
                                                             ]
                                                         }
@@ -197,39 +233,44 @@
                                                                     "type": "entities",
                                                                     "entities": [
                                                                         {
-                                                                            "entity": "script.climate_auto_apartment",
+                                                                            "entity": "script.climate_apartment_auto",
                                                                             "name": "Auto",
-                                                                            "icon": "mdi:autorenew"
+                                                                            "icon": "mdi:calendar-sync-outline"
                                                                         },
                                                                         {
-                                                                            "entity": "script.climate_boost_apartment",
+                                                                            "entity": "script.climate_apartment_boost",
                                                                             "name": "Boost",
                                                                             "icon": "mdi:timer-outline"
                                                                         },
                                                                         {
-                                                                            "entity": "script.climate_comfort_apartment",
+                                                                            "entity": "script.climate_apartment_comfort",
                                                                             "name": "Comfort",
-                                                                            "icon": "mdi:heart"
+                                                                            "icon": "mdi:heart-outline"
                                                                         },
                                                                         {
-                                                                            "entity": "script.climate_eco_apartment",
+                                                                            "entity": "script.climate_apartment_eco",
                                                                             "name": "Eco",
                                                                             "icon": "mdi:leaf"
                                                                         },
                                                                         {
-                                                                            "entity": "script.climate_away_apartment",
+                                                                            "entity": "script.climate_apartment_away",
                                                                             "name": "Away",
-                                                                            "icon": "mdi:bag-suitcase"
+                                                                            "icon": "mdi:bag-suitcase-outline"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "type": "entities",
+                                                                    "entities": [
+                                                                        {
+                                                                            "entity": "script.climate_apartment_on",
+                                                                            "name": "An",
+                                                                            "icon": "mdi:power-plug-outline"
                                                                         },
                                                                         {
-                                                                            "entity": "script.climate_on_apartment",
-                                                                            "name": "An (voll)",
-                                                                            "icon": "mdi:power-plug"
-                                                                        },
-                                                                        {
-                                                                            "entity": "script.climate_off_apartment",
+                                                                            "entity": "script.climate_apartment_off",
                                                                             "name": "Aus",
-                                                                            "icon": "mdi:power-plug-off"
+                                                                            "icon": "mdi:power-plug-off-outline"
                                                                         }
                                                                     ]
                                                                 }
@@ -329,12 +370,12 @@
                                                     "type": "entities",
                                                     "entities": [
                                                         {
-                                                            "entity": "scene.nightlight",
+                                                            "entity": "scene.light_nightlight",
                                                             "icon": "mdi:weather-night",
-                                                            "name": "Nightlight"
+                                                            "name": "Nachtlicht"
                                                         },
                                                         {
-                                                            "entity": "scene.white",
+                                                            "entity": "scene.light_white",
                                                             "icon": "mdi:white-balance-sunny",
                                                             "name": "White"
                                                         }
@@ -391,11 +432,16 @@
                                                         {
                                                             "entity": "switch.livingroom_globe",
                                                             "name": "Globus",
-                                                            "icon": "mdi:desk-lamp"
+                                                            "icon": "mdi:earth"
                                                         },
                                                         {
-                                                            "entity": "switch.bedroom_nightbulb",
-                                                            "name": "Nachtlicht",
+                                                            "entity": "light.50450440f4cfa21eec11",
+                                                            "name": "Globus",
+                                                            "icon": "mdi:earth"
+                                                        },
+                                                        {
+                                                            "entity": "switch.bedroom_lamp",
+                                                            "name": "Stehlampe",
                                                             "icon": "mdi:desk-lamp"
                                                         }
                                                     ]
@@ -456,102 +502,551 @@
                                     "type": "horizontal-stack",
                                     "cards": [
                                         {
-                                            "type": "button",
-                                            "tap_action": {
-                                                "action": "call-service",
-                                                "service": "climate.set_hvac_mode",
-                                                "service_data": {
-                                                    "entity_id": "group.climate_apartment",
-                                                    "hvac_mode": "auto"
+                                            "type": "vertical-stack",
+                                            "cards": [
+                                                {
+                                                    "type": "entities",
+                                                    "entities": [
+                                                        {
+                                                            "entity": "script.climate_livingroom_off",
+                                                            "icon": "mdi:power-plug-off-outline",
+                                                            "name": "Aus"
+                                                        },
+                                                        {
+                                                            "entity": "script.climate_livingroom_on",
+                                                            "icon": "mdi:power-plug-outline",
+                                                            "name": "An"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "entities",
+                                                    "entities": [
+                                                        {
+                                                            "entity": "script.climate_livingroom_auto",
+                                                            "icon": "mdi:calendar-sync-outline",
+                                                            "name": "Auto"
+                                                        },
+                                                        {
+                                                            "entity": "script.climate_livingroom_boost",
+                                                            "icon": "mdi:arm-flex-outline",
+                                                            "name": "Boost"
+                                                        },
+                                                        {
+                                                            "entity": "script.climate_livingroom_comfort",
+                                                            "icon": "mdi:heart-outline",
+                                                            "name": "Comfort"
+                                                        },
+                                                        {
+                                                            "entity": "script.climate_livingroom_eco",
+                                                            "icon": "mdi:leaf",
+                                                            "name": "Eco"
+                                                        },
+                                                        {
+                                                            "entity": "script.climate_livingroom_away",
+                                                            "icon": "mdi:bag-suitcase-outline",
+                                                            "name": "Abwesend"
+                                                        }
+                                                    ]
                                                 }
-                                            },
-                                            "entity": "group.climate_apartment",
-                                            "name": "Auto",
-                                            "icon": "mdi:calendar-sync-outline"
+                                            ]
                                         },
                                         {
-                                            "type": "button",
-                                            "tap_action": {
-                                                "action": "call-service",
-                                                "service": "climate.set_preset_mode",
-                                                "service_data": {
-                                                    "entity_id": "group.climate_apartment",
-                                                    "preset_mode": "boost"
+                                            "type": "vertical-stack",
+                                            "cards": [
+                                                {
+                                                    "type": "entities",
+                                                    "entities": [
+                                                        {
+                                                            "entity": "script.climate_workroom_off",
+                                                            "icon": "mdi:power-plug-off-outline",
+                                                            "name": "Aus"
+                                                        },
+                                                        {
+                                                            "entity": "script.climate_workroom_on",
+                                                            "icon": "mdi:power-plug-outline",
+                                                            "name": "An"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "entities",
+                                                    "entities": [
+                                                        {
+                                                            "entity": "script.climate_workroom_auto",
+                                                            "icon": "mdi:calendar-sync-outline",
+                                                            "name": "Auto"
+                                                        },
+                                                        {
+                                                            "entity": "script.climate_workroom_boost",
+                                                            "icon": "mdi:arm-flex-outline",
+                                                            "name": "Boost"
+                                                        },
+                                                        {
+                                                            "entity": "script.climate_workroom_comfort",
+                                                            "icon": "mdi:heart-outline",
+                                                            "name": "Comfort"
+                                                        },
+                                                        {
+                                                            "entity": "script.climate_workroom_eco",
+                                                            "icon": "mdi:leaf",
+                                                            "name": "Eco"
+                                                        },
+                                                        {
+                                                            "entity": "script.climate_workroom_away",
+                                                            "icon": "mdi:bag-suitcase-outline",
+                                                            "name": "Abwesend"
+                                                        }
+                                                    ]
                                                 }
-                                            },
-                                            "entity": "group.climate_apartment",
-                                            "name": "Boost",
-                                            "icon": "mdi:arm-flex"
+                                            ]
                                         },
                                         {
-                                            "type": "button",
-                                            "tap_action": {
-                                                "action": "call-service",
-                                                "service": "climate.set_preset_mode",
-                                                "service_data": {
-                                                    "entity_id": "group.climate_apartment",
-                                                    "preset_mode": "comfort"
+                                            "type": "vertical-stack",
+                                            "cards": [
+                                                {
+                                                    "type": "entities",
+                                                    "entities": [
+                                                        {
+                                                            "entity": "script.climate_kitchen_off",
+                                                            "icon": "mdi:power-plug-off-outline",
+                                                            "name": "Aus"
+                                                        },
+                                                        {
+                                                            "entity": "script.climate_kitchen_on",
+                                                            "icon": "mdi:power-plug-outline",
+                                                            "name": "An"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "entities",
+                                                    "entities": [
+                                                        {
+                                                            "entity": "script.climate_kitchen_auto",
+                                                            "icon": "mdi:calendar-sync-outline",
+                                                            "name": "Auto"
+                                                        },
+                                                        {
+                                                            "entity": "script.climate_kitchen_boost",
+                                                            "icon": "mdi:arm-flex-outline",
+                                                            "name": "Boost"
+                                                        },
+                                                        {
+                                                            "entity": "script.climate_kitchen_comfort",
+                                                            "icon": "mdi:heart-outline",
+                                                            "name": "Comfort"
+                                                        },
+                                                        {
+                                                            "entity": "script.climate_kitchen_eco",
+                                                            "icon": "mdi:leaf",
+                                                            "name": "Eco"
+                                                        },
+                                                        {
+                                                            "entity": "script.climate_kitchen_away",
+                                                            "icon": "mdi:bag-suitcase-outline",
+                                                            "name": "Abwesend"
+                                                        }
+                                                    ]
                                                 }
-                                            },
-                                            "entity": "group.climate_apartment",
-                                            "name": "Comfort",
-                                            "icon": "mdi:heart"
+                                            ]
                                         },
                                         {
-                                            "type": "button",
-                                            "tap_action": {
-                                                "action": "call-service",
-                                                "service": "climate.set_preset_mode",
-                                                "service_data": {
-                                                    "entity_id": "group.climate_apartment",
-                                                    "preset_mode": "eco"
+                                            "type": "vertical-stack",
+                                            "cards": [
+                                                {
+                                                    "type": "entities",
+                                                    "entities": [
+                                                        {
+                                                            "entity": "script.climate_bathroom_off",
+                                                            "icon": "mdi:power-plug-off-outline",
+                                                            "name": "Aus"
+                                                        },
+                                                        {
+                                                            "entity": "script.climate_bathroom_on",
+                                                            "icon": "mdi:power-plug-outline",
+                                                            "name": "An"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "entities",
+                                                    "entities": [
+                                                        {
+                                                            "entity": "script.climate_bathroom_auto",
+                                                            "icon": "mdi:calendar-sync-outline",
+                                                            "name": "Auto"
+                                                        },
+                                                        {
+                                                            "entity": "script.climate_bathroom_boost",
+                                                            "icon": "mdi:arm-flex-outline",
+                                                            "name": "Boost"
+                                                        },
+                                                        {
+                                                            "entity": "script.climate_bathroom_comfort",
+                                                            "icon": "mdi:heart-outline",
+                                                            "name": "Comfort"
+                                                        },
+                                                        {
+                                                            "entity": "script.climate_bathroom_eco",
+                                                            "icon": "mdi:leaf",
+                                                            "name": "Eco"
+                                                        },
+                                                        {
+                                                            "entity": "script.climate_bathroom_away",
+                                                            "icon": "mdi:bag-suitcase-outline",
+                                                            "name": "Abwesend"
+                                                        }
+                                                    ]
                                                 }
-                                            },
-                                            "entity": "group.climate_apartment",
-                                            "name": "Eco",
-                                            "icon": "mdi:leaf"
+                                            ]
                                         },
                                         {
-                                            "type": "button",
-                                            "tap_action": {
-                                                "action": "call-service",
-                                                "service": "climate.set_hvac_mode",
-                                                "service_data": {
-                                                    "entity_id": "group.climate_apartment",
-                                                    "preset_mode": "away"
+                                            "type": "vertical-stack",
+                                            "cards": [
+                                                {
+                                                    "type": "entities",
+                                                    "entities": [
+                                                        {
+                                                            "entity": "script.climate_bedroom_off",
+                                                            "icon": "mdi:power-plug-off-outline",
+                                                            "name": "Aus"
+                                                        },
+                                                        {
+                                                            "entity": "script.climate_bedroom_on",
+                                                            "icon": "mdi:power-plug-outline",
+                                                            "name": "An"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "entities",
+                                                    "entities": [
+                                                        {
+                                                            "entity": "script.climate_bedroom_auto",
+                                                            "icon": "mdi:calendar-sync-outline",
+                                                            "name": "Auto"
+                                                        },
+                                                        {
+                                                            "entity": "script.climate_bedroom_boost",
+                                                            "icon": "mdi:arm-flex-outline",
+                                                            "name": "Boost"
+                                                        },
+                                                        {
+                                                            "entity": "script.climate_bedroom_comfort",
+                                                            "icon": "mdi:heart-outline",
+                                                            "name": "Comfort"
+                                                        },
+                                                        {
+                                                            "entity": "script.climate_bedroom_eco",
+                                                            "icon": "mdi:leaf",
+                                                            "name": "Eco"
+                                                        },
+                                                        {
+                                                            "entity": "script.climate_bedroom_away",
+                                                            "icon": "mdi:bag-suitcase-outline",
+                                                            "name": "Abwesend"
+                                                        }
+                                                    ]
                                                 }
-                                            },
-                                            "entity": "group.climate_apartment",
-                                            "name": "Away",
-                                            "icon": "mdi:arrow-left-bold-circle-outline"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "icon": "mdi:devices",
+                    "path": "devices",
+                    "panel": true,
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "vertical-stack",
+                            "cards": [
+                                {
+                                    "type": "markdown",
+                                    "content": "## MOBILE"
+                                },
+                                {
+                                    "type": "horizontal-stack",
+                                    "cards": [
+                                        {
+                                            "type": "markdown",
+                                            "content": "### MOLECULE"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "horizontal-stack",
+                                    "cards": [
+                                        {
+                                            "type": "vertical-stack",
+                                            "cards": [
+                                                {
+                                                    "type": "entities",
+                                                    "entities": [
+                                                        {
+                                                            "entity": "sensor.molecule_anzahl_aktivier_benachrichtigungen",
+                                                            "name": "Benachrichtigungen"
+                                                        }
+                                                    ],
+                                                    "show_header_toggle": false
+                                                },
+                                                {
+                                                    "type": "entity",
+                                                    "entity": "sensor.molecule_letzte_benachrichtigung",
+                                                    "name": "Letzte Benachrichtigung"
+                                                }
+                                            ]
                                         },
                                         {
-                                            "type": "button",
-                                            "tap_action": {
-                                                "action": "call-service",
-                                                "service": "climate.set_preset_mode",
-                                                "service_data": {
-                                                    "entity_id": "group.climate_apartment",
-                                                    "preset_mode": "on"
+                                            "type": "vertical-stack",
+                                            "cards": [
+                                                {
+                                                    "type": "entities",
+                                                    "entities": [
+                                                        {
+                                                            "entity": "sensor.molecule_telefonstatus",
+                                                            "name": "Telefon"
+                                                        },
+                                                        {
+                                                            "entity": "sensor.molecule_sim_1",
+                                                            "name": "Sim 1"
+                                                        },
+                                                        {
+                                                            "entity": "sensor.molecule_sim_2",
+                                                            "name": "Sim 2"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "entities",
+                                                    "entities": [
+                                                        {
+                                                            "entity": "binary_sensor.molecule_musik_wird_abgespielt",
+                                                            "name": "Musik"
+                                                        },
+                                                        {
+                                                            "entity": "sensor.molecule_lautstarke_musikwiedergabe",
+                                                            "name": "Lautst\u00e4rke"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "entities",
+                                                    "entities": [
+                                                        {
+                                                            "entity": "binary_sensor.molecule_bluetooth_status",
+                                                            "name": "Bluetooth"
+                                                        },
+                                                        {
+                                                            "entity": "sensor.molecule_bluetooth_verbindung",
+                                                            "name": "Verbindungen"
+                                                        }
+                                                    ]
                                                 }
-                                            },
-                                            "entity": "group.climate_apartment",
-                                            "name": "On",
-                                            "icon": "mdi:check-circle-outline"
+                                            ]
                                         },
                                         {
-                                            "type": "button",
-                                            "tap_action": {
-                                                "action": "call-service",
-                                                "service": "climate.set_hvac_mode",
-                                                "service_data": {
-                                                    "entity_id": "group.climate_apartment",
-                                                    "hvac_mode": "off"
+                                            "type": "vertical-stack",
+                                            "cards": [
+                                                {
+                                                    "type": "entities",
+                                                    "entities": [
+                                                        {
+                                                            "entity": "binary_sensor.molecule_energiesparen",
+                                                            "name": "Energiesparen"
+                                                        },
+                                                        {
+                                                            "entity": "sensor.molecule_akkustatus",
+                                                            "name": "Akkustatus"
+                                                        },
+                                                        {
+                                                            "entity": "sensor.molecule_akkufullstand",
+                                                            "name": "Akkuf\u00fcllstand"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "entities",
+                                                    "entities": [
+                                                        {
+                                                            "entity": "binary_sensor.molecule_gerat_ist_gesperrt",
+                                                            "name": "Gesperrt"
+                                                        },
+                                                        {
+                                                            "entity": "binary_sensor.molecule_gerat_ist_sicher",
+                                                            "name": "Sicher"
+                                                        }
+                                                    ]
                                                 }
-                                            },
-                                            "entity": "group.climate_apartment",
-                                            "name": "Off",
-                                            "icon": "mdi:alert-circle-outline"
+                                            ]
+                                        },
+                                        {
+                                            "type": "vertical-stack",
+                                            "cards": [
+                                                {
+                                                    "type": "entities",
+                                                    "entities": [
+                                                        {
+                                                            "entity": "sensor.molecule_geokodierter_standort"
+                                                        }
+                                                    ],
+                                                    "show_header_toggle": false
+                                                },
+                                                {
+                                                    "type": "map",
+                                                    "entities": [
+                                                        {
+                                                            "entity": "device_tracker.molecule"
+                                                        }
+                                                    ],
+                                                    "hours_to_show": 0
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "horizontal-stack",
+                                    "cards": [
+                                        {
+                                            "type": "markdown",
+                                            "content": "### PAD"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "horizontal-stack",
+                                    "cards": [
+                                        {
+                                            "type": "vertical-stack",
+                                            "cards": [
+                                                {
+                                                    "type": "entities",
+                                                    "entities": [
+                                                        {
+                                                            "entity": "sensor.pad_anzahl_aktivier_benachrichtigungen",
+                                                            "name": "Benachrichtigungen"
+                                                        }
+                                                    ],
+                                                    "show_header_toggle": false
+                                                },
+                                                {
+                                                    "type": "entity",
+                                                    "entity": "sensor.pad_letzte_benachrichtigung",
+                                                    "name": "Letzte Benachrichtigung"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "vertical-stack",
+                                            "cards": [
+                                                {
+                                                    "type": "entities",
+                                                    "entities": [
+                                                        {
+                                                            "entity": "sensor.pad_telefonstatus",
+                                                            "name": "Telefon"
+                                                        },
+                                                        {
+                                                            "entity": "sensor.pad_sim_1",
+                                                            "name": "Sim 1"
+                                                        },
+                                                        {
+                                                            "entity": "sensor.pad_sim_2",
+                                                            "name": "Sim 2"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "entities",
+                                                    "entities": [
+                                                        {
+                                                            "entity": "binary_sensor.pad_musik_wird_abgespielt",
+                                                            "name": "Musik"
+                                                        },
+                                                        {
+                                                            "entity": "sensor.pad_lautstarke_musikwiedergabe",
+                                                            "name": "Lautst\u00e4rke"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "entities",
+                                                    "entities": [
+                                                        {
+                                                            "entity": "binary_sensor.pad_bluetooth_status",
+                                                            "name": "Bluetooth"
+                                                        },
+                                                        {
+                                                            "entity": "sensor.pad_bluetooth_verbindung",
+                                                            "name": "Verbindungen"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "vertical-stack",
+                                            "cards": [
+                                                {
+                                                    "type": "entities",
+                                                    "entities": [
+                                                        {
+                                                            "entity": "binary_sensor.pad_energiesparen",
+                                                            "name": "Energiesparen"
+                                                        },
+                                                        {
+                                                            "entity": "sensor.pad_akkustatus",
+                                                            "name": "Akkustatus"
+                                                        },
+                                                        {
+                                                            "entity": "sensor.pad_akkufullstand",
+                                                            "name": "Akkuf\u00fcllstand"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "entities",
+                                                    "entities": [
+                                                        {
+                                                            "entity": "binary_sensor.pad_gerat_ist_gesperrt",
+                                                            "name": "Gesperrt"
+                                                        },
+                                                        {
+                                                            "entity": "binary_sensor.pad_gerat_ist_sicher",
+                                                            "name": "Sicher"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "vertical-stack",
+                                            "cards": [
+                                                {
+                                                    "type": "entities",
+                                                    "entities": [
+                                                        {
+                                                            "entity": "sensor.pad_geokodierter_standort"
+                                                        }
+                                                    ],
+                                                    "show_header_toggle": false
+                                                },
+                                                {
+                                                    "type": "map",
+                                                    "entities": [
+                                                        {
+                                                            "entity": "device_tracker.pad"
+                                                        }
+                                                    ],
+                                                    "hours_to_show": 0
+                                                }
+                                            ]
                                         }
                                     ]
                                 }
@@ -714,103 +1209,6 @@
                                             "icon": "hass:snowflake",
                                             "name": "Klimaanlage",
                                             "show_name": false
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "icon": "mdi:devices",
-                    "path": "devices",
-                    "panel": true,
-                    "badges": [],
-                    "cards": [
-                        {
-                            "type": "vertical-stack",
-                            "cards": [
-                                {
-                                    "type": "markdown",
-                                    "content": "## MOBILE"
-                                },
-                                {
-                                    "type": "horizontal-stack",
-                                    "cards": [
-                                        {
-                                            "type": "vertical-stack",
-                                            "cards": [
-                                                {
-                                                    "type": "horizontal-stack",
-                                                    "cards": [
-                                                        {
-                                                            "type": "markdown",
-                                                            "content": "### MOLECULE"
-                                                        },
-                                                        {
-                                                            "type": "markdown",
-                                                            "content": "### PAD"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "type": "horizontal-stack",
-                                                    "cards": [
-                                                        {
-                                                            "type": "entities",
-                                                            "entities": [
-                                                                {
-                                                                    "entity": "sensor.molecule_geokodierter_standort",
-                                                                    "name": "Standort"
-                                                                },
-                                                                {
-                                                                    "entity": "sensor.molecule_akkufullstand",
-                                                                    "name": "Akkuf\u00fcllstand"
-                                                                },
-                                                                {
-                                                                    "entity": "sensor.molecule_akkustatus",
-                                                                    "name": "Akkustatus"
-                                                                }
-                                                            ]
-                                                        },
-                                                        {
-                                                            "type": "entities",
-                                                            "entities": [
-                                                                {
-                                                                    "entity": "sensor.pad_geokodierter_standort",
-                                                                    "name": "Standort"
-                                                                },
-                                                                {
-                                                                    "entity": "sensor.pad_akkufullstand",
-                                                                    "name": "Akkuf\u00fcllstand"
-                                                                },
-                                                                {
-                                                                    "entity": "sensor.pad_akkustatus",
-                                                                    "name": "Akkustatus"
-                                                                }
-                                                            ]
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "type": "vertical-stack",
-                                            "cards": [
-                                                {
-                                                    "type": "map",
-                                                    "entities": [
-                                                        {
-                                                            "entity": "device_tracker.pad"
-                                                        },
-                                                        {
-                                                            "entity": "device_tracker.molecule"
-                                                        }
-                                                    ],
-                                                    "hours_to_show": 0,
-                                                    "dark_mode": true
-                                                }
-                                            ]
                                         }
                                     ]
                                 }
@@ -1257,23 +1655,7 @@
                     "cards": [
                         {
                             "type": "vertical-stack",
-                            "cards": [
-                                {
-                                    "type": "horizontal-stack",
-                                    "cards": [
-                                        {
-                                            "type": "entities",
-                                            "entities": [
-                                                {
-                                                    "entity": "sensor.marfis"
-                                                }
-                                            ],
-                                            "state_color": false,
-                                            "show_header_toggle": false
-                                        }
-                                    ]
-                                }
-                            ]
+                            "cards": []
                         }
                     ]
                 }

@@ -1,0 +1,3 @@
+username: !secret TUYA_USERNAME
+password: !secret TUYA_PASSWORD
+country_code: DE

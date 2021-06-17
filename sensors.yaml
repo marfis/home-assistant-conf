@@ -34,3 +34,39 @@
 #   api_key: !secret XAPI_API_KEY
 #   xuid:
 #     - !secret XAPI_USER_ID
+
+#- platform: template
+#  sensors:
+#    climate_livingroom_temperature:
+#      friendly_name: "Temperatur Wohnzimmer"
+#      unit_of_measurement: '°C'
+#      value_template: "{{ state_attr('climate.wohnzimmer_wandthermostat', 'current_temperature') }}"
+#- platform: template
+#  sensors:
+#    climate_kitchen_temperature:
+#      friendly_name: "Temperatur Küche"
+#      unit_of_measurement: '°C'
+#      value_template: "{{ state_attr('climate.kuche_wandthermostat', 'current_temperature') }}"
+#- platform: template
+#  sensors:
+#    climate_workroom_temperature:
+#      friendly_name: "Temperatur Hobbyraum"
+#      unit_of_measurement: '°C'
+#      value_template: "{{ state_attr('climate.hobbyraum_wandthermostat', 'current_temperature') }}"
+#- platform: template
+#  sensors:
+#    climate_bedroom_temperature:
+#      friendly_name: "Temperatur Schlafzimmer"
+#      unit_of_measurement: '°C'
+#      value_template: "{{ state_attr('climate.schlafzimmer_wandthermostat', 'current_temperature') }}"
+#- platform: template
+#  sensors:
+#    climate_bathroom_temperature:
+#      friendly_name: "Temperatur Bad"
+#      unit_of_measurement: '°C'
+#      value_template: "{{ state_attr('climate.bad_wandthermostat', 'current_temperature') }}"
+
+- platform: rest
+  resource: https://extranet.marfis.tech/ocs/v2.php/apps/serverinfo/api/v1/info
+  name: mft_extranet
+  force_update: true

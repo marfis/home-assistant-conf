@@ -1,0 +1,4 @@
+interfaces:
+  ap:
+    host: !secret HOMEMATICIP_HOST_1
+    port: 2010

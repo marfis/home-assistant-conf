@@ -138,14 +138,17 @@
                                                                     "name": "Schlafen"
                                                                 },
                                                                 {
-                                                                    "entity": "scene.away",
-                                                                    "name": "Abwesend",
-                                                                    "icon": "mdi:bag-suitcase-outline"
-                                                                },
-                                                                {
                                                                     "entity": "script.light_reset",
                                                                     "name": "Reset",
                                                                     "icon": "mdi:restart"
+                                                                },
+                                                                {
+                                                                    "entity": "script.apartment_on",
+                                                                    "icon": "mdi:bag-suitcase-outline"
+                                                                },
+                                                                {
+                                                                    "entity": "script.apartment_off",
+                                                                    "icon": "mdi:bag-suitcase-outline"
                                                                 }
                                                             ]
                                                         },
@@ -220,59 +223,39 @@
                                                     ]
                                                 },
                                                 {
-                                                    "type": "horizontal-stack",
+                                                    "type": "vertical-stack",
                                                     "cards": [
                                                         {
-                                                            "type": "vertical-stack",
-                                                            "cards": [
+                                                            "type": "markdown",
+                                                            "content": "### HEIZUNG"
+                                                        },
+                                                        {
+                                                            "type": "entities",
+                                                            "entities": [
                                                                 {
-                                                                    "type": "markdown",
-                                                                    "content": "### HEIZUNG"
+                                                                    "entity": "script.climate_apartment_auto",
+                                                                    "name": "Auto",
+                                                                    "icon": "mdi:calendar-sync-outline"
                                                                 },
                                                                 {
-                                                                    "type": "entities",
-                                                                    "entities": [
-                                                                        {
-                                                                            "entity": "script.climate_apartment_auto",
-                                                                            "name": "Auto",
-                                                                            "icon": "mdi:calendar-sync-outline"
-                                                                        },
-                                                                        {
-                                                                            "entity": "script.climate_apartment_boost",
-                                                                            "name": "Boost",
-                                                                            "icon": "mdi:timer-outline"
-                                                                        },
-                                                                        {
-                                                                            "entity": "script.climate_apartment_comfort",
-                                                                            "name": "Comfort",
-                                                                            "icon": "mdi:heart-outline"
-                                                                        },
-                                                                        {
-                                                                            "entity": "script.climate_apartment_eco",
-                                                                            "name": "Eco",
-                                                                            "icon": "mdi:leaf"
-                                                                        },
-                                                                        {
-                                                                            "entity": "script.climate_apartment_away",
-                                                                            "name": "Away",
-                                                                            "icon": "mdi:bag-suitcase-outline"
-                                                                        }
-                                                                    ]
+                                                                    "entity": "script.climate_apartment_boost",
+                                                                    "name": "Boost",
+                                                                    "icon": "mdi:timer-outline"
                                                                 },
                                                                 {
-                                                                    "type": "entities",
-                                                                    "entities": [
-                                                                        {
-                                                                            "entity": "script.climate_apartment_on",
-                                                                            "name": "An",
-                                                                            "icon": "mdi:power-plug-outline"
-                                                                        },
-                                                                        {
-                                                                            "entity": "script.climate_apartment_off",
-                                                                            "name": "Aus",
-                                                                            "icon": "mdi:power-plug-off-outline"
-                                                                        }
-                                                                    ]
+                                                                    "entity": "script.climate_apartment_eco",
+                                                                    "name": "Eco",
+                                                                    "icon": "mdi:leaf"
+                                                                },
+                                                                {
+                                                                    "entity": "script.climate_apartment_away",
+                                                                    "name": "Away",
+                                                                    "icon": "mdi:bag-suitcase-outline"
+                                                                },
+                                                                {
+                                                                    "entity": "script.climate_apartment_off",
+                                                                    "name": "Aus",
+                                                                    "icon": "mdi:power-plug-off-outline"
                                                                 }
                                                             ]
                                                         }
@@ -443,6 +426,11 @@
                                                             "entity": "switch.bedroom_lamp",
                                                             "name": "Stehlampe",
                                                             "icon": "mdi:desk-lamp"
+                                                        },
+                                                        {
+                                                            "entity": "light.36837871bcddc23cbb4b",
+                                                            "name": "Stehlampe",
+                                                            "icon": "mdi:circle-slice-8"
                                                         }
                                                     ]
                                                 }
@@ -465,36 +453,145 @@
                             "type": "vertical-stack",
                             "cards": [
                                 {
-                                    "type": "markdown",
-                                    "content": "## HEIZUNG"
+                                    "type": "horizontal-stack",
+                                    "cards": [
+                                        {
+                                            "type": "markdown",
+                                            "content": "## HEIZUNG"
+                                        },
+                                        {
+                                            "type": "entities",
+                                            "entities": [
+                                                {
+                                                    "entity": "script.climate_apartment_auto",
+                                                    "name": "Auto",
+                                                    "icon": "mdi:calendar-sync-outline"
+                                                },
+                                                {
+                                                    "entity": "script.climate_apartment_boost",
+                                                    "name": "Boost",
+                                                    "icon": "mdi:timer-outline"
+                                                },
+                                                {
+                                                    "entity": "script.climate_apartment_boost_off",
+                                                    "name": "Cancel",
+                                                    "icon": "mdi:timer-outline"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "entities",
+                                            "entities": [
+                                                {
+                                                    "entity": "script.climate_apartment_eco",
+                                                    "name": "Eco",
+                                                    "icon": "mdi:leaf"
+                                                },
+                                                {
+                                                    "entity": "script.climate_apartment_away",
+                                                    "name": "Away",
+                                                    "icon": "mdi:bag-suitcase-outline"
+                                                },
+                                                {
+                                                    "entity": "script.climate_apartment_off",
+                                                    "name": "Aus",
+                                                    "icon": "mdi:power-plug-off-outline"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "entities",
+                                            "entities": [
+                                                {
+                                                    "entity": "sensor.hmip_cloud_home_control_access_point_duty_cycle",
+                                                    "name": "Duty Cycle"
+                                                },
+                                                {
+                                                    "entity": "alarm_control_panel.hmip_cloud_hmip_alarm_control_panel",
+                                                    "name": "Alarm State"
+                                                }
+                                            ]
+                                        }
+                                    ]
                                 },
                                 {
                                     "type": "horizontal-stack",
                                     "cards": [
                                         {
                                             "type": "thermostat",
-                                            "entity": "climate.wohnzimmer_wandthermostat",
+                                            "entity": "climate.hmip_cloud_livingroom",
                                             "name": "Wohnzimmer"
                                         },
                                         {
                                             "type": "thermostat",
-                                            "entity": "climate.hobbyraum_wandthermostat",
-                                            "name": "Hobbyraum"
+                                            "entity": "climate.hmip_cloud_workroom",
+                                            "name": "Arbeitszimmer"
                                         },
                                         {
                                             "type": "thermostat",
-                                            "entity": "climate.kuche_wandthermostat",
+                                            "entity": "climate.hmip_cloud_kitchen",
                                             "name": "K\u00fcche"
                                         },
                                         {
                                             "type": "thermostat",
-                                            "entity": "climate.bad_wandthermostat",
+                                            "entity": "climate.hmip_cloud_bathroom",
                                             "name": "Bad"
                                         },
                                         {
                                             "type": "thermostat",
-                                            "entity": "climate.schlafzimmer_wandthermostat",
+                                            "entity": "climate.hmip_cloud_bedroom",
                                             "name": "Schlafzimmer"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "horizontal-stack",
+                                    "cards": [
+                                        {
+                                            "type": "entities",
+                                            "entities": [
+                                                {
+                                                    "entity": "sensor.hmip_cloud_thermostat_humidity_3",
+                                                    "name": "Humidity"
+                                                }
+                                            ],
+                                            "show_header_toggle": true
+                                        },
+                                        {
+                                            "type": "entities",
+                                            "entities": [
+                                                {
+                                                    "entity": "sensor.hmip_cloud_thermostat_humidity",
+                                                    "name": "Humidity"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "entities",
+                                            "entities": [
+                                                {
+                                                    "entity": "sensor.hmip_cloud_thermostat_humidity_4",
+                                                    "name": "Humidity"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "entities",
+                                            "entities": [
+                                                {
+                                                    "entity": "sensor.hmip_cloud_thermostat_humidity_5",
+                                                    "name": "Humidity"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "entities",
+                                            "entities": [
+                                                {
+                                                    "entity": "sensor.hmip_cloud_thermostat_humidity_2",
+                                                    "name": "Humidity"
+                                                }
+                                            ]
                                         }
                                     ]
                                 },
@@ -504,21 +601,6 @@
                                         {
                                             "type": "vertical-stack",
                                             "cards": [
-                                                {
-                                                    "type": "entities",
-                                                    "entities": [
-                                                        {
-                                                            "entity": "script.climate_livingroom_off",
-                                                            "icon": "mdi:power-plug-off-outline",
-                                                            "name": "Aus"
-                                                        },
-                                                        {
-                                                            "entity": "script.climate_livingroom_on",
-                                                            "icon": "mdi:power-plug-outline",
-                                                            "name": "An"
-                                                        }
-                                                    ]
-                                                },
                                                 {
                                                     "type": "entities",
                                                     "entities": [
@@ -533,19 +615,9 @@
                                                             "name": "Boost"
                                                         },
                                                         {
-                                                            "entity": "script.climate_livingroom_comfort",
-                                                            "icon": "mdi:heart-outline",
-                                                            "name": "Comfort"
-                                                        },
-                                                        {
-                                                            "entity": "script.climate_livingroom_eco",
-                                                            "icon": "mdi:leaf",
-                                                            "name": "Eco"
-                                                        },
-                                                        {
-                                                            "entity": "script.climate_livingroom_away",
-                                                            "icon": "mdi:bag-suitcase-outline",
-                                                            "name": "Abwesend"
+                                                            "entity": "script.climate_livingroom_off",
+                                                            "icon": "mdi:power-plug-off-outline",
+                                                            "name": "Aus"
                                                         }
                                                     ]
                                                 }
@@ -554,21 +626,6 @@
                                         {
                                             "type": "vertical-stack",
                                             "cards": [
-                                                {
-                                                    "type": "entities",
-                                                    "entities": [
-                                                        {
-                                                            "entity": "script.climate_workroom_off",
-                                                            "icon": "mdi:power-plug-off-outline",
-                                                            "name": "Aus"
-                                                        },
-                                                        {
-                                                            "entity": "script.climate_workroom_on",
-                                                            "icon": "mdi:power-plug-outline",
-                                                            "name": "An"
-                                                        }
-                                                    ]
-                                                },
                                                 {
                                                     "type": "entities",
                                                     "entities": [
@@ -583,19 +640,9 @@
                                                             "name": "Boost"
                                                         },
                                                         {
-                                                            "entity": "script.climate_workroom_comfort",
-                                                            "icon": "mdi:heart-outline",
-                                                            "name": "Comfort"
-                                                        },
-                                                        {
-                                                            "entity": "script.climate_workroom_eco",
-                                                            "icon": "mdi:leaf",
-                                                            "name": "Eco"
-                                                        },
-                                                        {
-                                                            "entity": "script.climate_workroom_away",
-                                                            "icon": "mdi:bag-suitcase-outline",
-                                                            "name": "Abwesend"
+                                                            "entity": "script.climate_workroom_off",
+                                                            "icon": "mdi:power-plug-off-outline",
+                                                            "name": "Aus"
                                                         }
                                                     ]
                                                 }
@@ -604,21 +651,6 @@
                                         {
                                             "type": "vertical-stack",
                                             "cards": [
-                                                {
-                                                    "type": "entities",
-                                                    "entities": [
-                                                        {
-                                                            "entity": "script.climate_kitchen_off",
-                                                            "icon": "mdi:power-plug-off-outline",
-                                                            "name": "Aus"
-                                                        },
-                                                        {
-                                                            "entity": "script.climate_kitchen_on",
-                                                            "icon": "mdi:power-plug-outline",
-                                                            "name": "An"
-                                                        }
-                                                    ]
-                                                },
                                                 {
                                                     "type": "entities",
                                                     "entities": [
@@ -633,19 +665,9 @@
                                                             "name": "Boost"
                                                         },
                                                         {
-                                                            "entity": "script.climate_kitchen_comfort",
-                                                            "icon": "mdi:heart-outline",
-                                                            "name": "Comfort"
-                                                        },
-                                                        {
-                                                            "entity": "script.climate_kitchen_eco",
-                                                            "icon": "mdi:leaf",
-                                                            "name": "Eco"
-                                                        },
-                                                        {
-                                                            "entity": "script.climate_kitchen_away",
-                                                            "icon": "mdi:bag-suitcase-outline",
-                                                            "name": "Abwesend"
+                                                            "entity": "script.climate_kitchen_off",
+                                                            "icon": "mdi:power-plug-off-outline",
+                                                            "name": "Aus"
                                                         }
                                                     ]
                                                 }
@@ -654,21 +676,6 @@
                                         {
                                             "type": "vertical-stack",
                                             "cards": [
-                                                {
-                                                    "type": "entities",
-                                                    "entities": [
-                                                        {
-                                                            "entity": "script.climate_bathroom_off",
-                                                            "icon": "mdi:power-plug-off-outline",
-                                                            "name": "Aus"
-                                                        },
-                                                        {
-                                                            "entity": "script.climate_bathroom_on",
-                                                            "icon": "mdi:power-plug-outline",
-                                                            "name": "An"
-                                                        }
-                                                    ]
-                                                },
                                                 {
                                                     "type": "entities",
                                                     "entities": [
@@ -683,19 +690,9 @@
                                                             "name": "Boost"
                                                         },
                                                         {
-                                                            "entity": "script.climate_bathroom_comfort",
-                                                            "icon": "mdi:heart-outline",
-                                                            "name": "Comfort"
-                                                        },
-                                                        {
-                                                            "entity": "script.climate_bathroom_eco",
-                                                            "icon": "mdi:leaf",
-                                                            "name": "Eco"
-                                                        },
-                                                        {
-                                                            "entity": "script.climate_bathroom_away",
-                                                            "icon": "mdi:bag-suitcase-outline",
-                                                            "name": "Abwesend"
+                                                            "entity": "script.climate_bathroom_off",
+                                                            "icon": "mdi:power-plug-off-outline",
+                                                            "name": "Aus"
                                                         }
                                                     ]
                                                 }
@@ -704,21 +701,6 @@
                                         {
                                             "type": "vertical-stack",
                                             "cards": [
-                                                {
-                                                    "type": "entities",
-                                                    "entities": [
-                                                        {
-                                                            "entity": "script.climate_bedroom_off",
-                                                            "icon": "mdi:power-plug-off-outline",
-                                                            "name": "Aus"
-                                                        },
-                                                        {
-                                                            "entity": "script.climate_bedroom_on",
-                                                            "icon": "mdi:power-plug-outline",
-                                                            "name": "An"
-                                                        }
-                                                    ]
-                                                },
                                                 {
                                                     "type": "entities",
                                                     "entities": [
@@ -733,23 +715,103 @@
                                                             "name": "Boost"
                                                         },
                                                         {
-                                                            "entity": "script.climate_bedroom_comfort",
-                                                            "icon": "mdi:heart-outline",
-                                                            "name": "Comfort"
-                                                        },
-                                                        {
-                                                            "entity": "script.climate_bedroom_eco",
-                                                            "icon": "mdi:leaf",
-                                                            "name": "Eco"
-                                                        },
-                                                        {
-                                                            "entity": "script.climate_bedroom_away",
-                                                            "icon": "mdi:bag-suitcase-outline",
-                                                            "name": "Abwesend"
+                                                            "entity": "script.climate_bedroom_off",
+                                                            "icon": "mdi:power-plug-off-outline",
+                                                            "name": "Aus"
                                                         }
                                                     ]
                                                 }
                                             ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "horizontal-stack",
+                                    "cards": [
+                                        {
+                                            "type": "sensor",
+                                            "entity": "sensor.hmip_cloud_thermostat_temperature_3",
+                                            "graph": "line",
+                                            "name": "Temperatur",
+                                            "detail": 1,
+                                            "unit": "\u00b0C"
+                                        },
+                                        {
+                                            "type": "sensor",
+                                            "entity": "sensor.hmip_cloud_thermostat_temperature",
+                                            "graph": "line",
+                                            "name": "Temperatur",
+                                            "detail": 1,
+                                            "unit": "\u00b0C"
+                                        },
+                                        {
+                                            "type": "sensor",
+                                            "entity": "sensor.hmip_cloud_thermostat_temperature_4",
+                                            "graph": "line",
+                                            "name": "Temperatur",
+                                            "detail": 1,
+                                            "unit": "\u00b0C"
+                                        },
+                                        {
+                                            "type": "sensor",
+                                            "entity": "sensor.hmip_cloud_thermostat_temperature_5",
+                                            "graph": "line",
+                                            "name": "Temperatur",
+                                            "detail": 1,
+                                            "unit": "\u00b0C"
+                                        },
+                                        {
+                                            "type": "sensor",
+                                            "entity": "sensor.hmip_cloud_thermostat_temperature_2",
+                                            "graph": "line",
+                                            "name": "Temperatur",
+                                            "detail": 1,
+                                            "unit": "\u00b0C"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "horizontal-stack",
+                                    "cards": [
+                                        {
+                                            "type": "sensor",
+                                            "entity": "sensor.hmip_cloud_thermostat_humidity_3",
+                                            "graph": "line",
+                                            "name": "Feuchtigkeit",
+                                            "detail": 1,
+                                            "unit": "rF"
+                                        },
+                                        {
+                                            "type": "sensor",
+                                            "entity": "sensor.hmip_cloud_thermostat_humidity",
+                                            "graph": "line",
+                                            "name": "Feuchtigkeit",
+                                            "detail": 1,
+                                            "unit": "rF"
+                                        },
+                                        {
+                                            "type": "sensor",
+                                            "entity": "sensor.hmip_cloud_thermostat_humidity_4",
+                                            "graph": "line",
+                                            "name": "Feuchtigkeit",
+                                            "detail": 1,
+                                            "unit": "rF"
+                                        },
+                                        {
+                                            "type": "sensor",
+                                            "entity": "sensor.hmip_cloud_thermostat_humidity_5",
+                                            "graph": "line",
+                                            "name": "Feuchtigkeit",
+                                            "detail": 1,
+                                            "unit": "rF"
+                                        },
+                                        {
+                                            "type": "sensor",
+                                            "entity": "sensor.hmip_cloud_thermostat_humidity_2",
+                                            "graph": "line",
+                                            "name": "Feuchtigkeit",
+                                            "detail": 1,
+                                            "unit": "rF"
                                         }
                                     ]
                                 }
@@ -1644,18 +1706,6 @@
                                     ]
                                 }
                             ]
-                        }
-                    ]
-                },
-                {
-                    "icon": "mdi:gamepad",
-                    "path": "gaming",
-                    "panel": true,
-                    "badges": [],
-                    "cards": [
-                        {
-                            "type": "vertical-stack",
-                            "cards": []
                         }
                     ]
                 }

@@ -41,7 +41,7 @@ climate_set_heat:
   speech:
     type: plain
     text: "OK"
-    
+
 climate_set_off:
   action:
     service: climate.set_hvac_mode
@@ -52,41 +52,19 @@ climate_set_off:
   speech:
     type: plain
     text: "OK"
-    
-climate_set_comfort:
-  action:
-    service: climate.set_preset_mode
-    data_template:
-      entity_id: group.{{room}}
-      preset_mode: comfort
-  async_action: true
-  speech:
-    type: plain
-    text: "OK"
-    
 
-climate_set_eco:
-  action:
-    service: climate.set_preset_mode
-    data_template:
-      entity_id: group.{{room}}
-      preset_mode: eco
-  async_action: true
-  speech:
-    type: plain
-    text: "OK"
-    
 climate_set_away:
   action:
-    service: climate.set_preset_mode
+    service: climate.set_hvac_mode
     data_template:
       entity_id: group.{{room}}
-      preset_mode: away
+      hvac_mode: heat
+      temperature: 7
   async_action: true
   speech:
     type: plain
     text: "OK"
-    
+
 climate_set_on:
   action:
     service: climate.set_preset_mode
@@ -97,7 +75,7 @@ climate_set_on:
   speech:
     type: plain
     text: "OK"
-    
+
 climate_set_boost:
   action:
     service: climate.set_preset_mode
@@ -114,9 +92,9 @@ climate_set_temperature:
     service: climate.set_temperature
     data_template:
       entity_id: group.{{room}}
-#      temperature: {{temperature}}
-#      target_temp_high: {{(temperature + 3)}}
-#      target_temp_low: {{(temperature - 3)}}
+      #      temperature: {{temperature}}
+      #      target_temp_high: {{(temperature + 3)}}
+      #      target_temp_low: {{(temperature - 3)}}
       hvac_mode: heat
 
 # Scenes

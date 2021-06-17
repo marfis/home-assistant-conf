@@ -72,8 +72,8 @@ synology_dsm: !include devices/synology_dsm.yaml
 mobile_app:
 discovery:
 
-# Max! eQ-3
-maxcube: !include devices/maxcube.yaml
+# homematicIP (cloud access)
+homematicip_cloud: !include devices/homematicip_cloud.yaml
 
 # MiLight
 light: !include devices/light.yaml
@@ -91,16 +91,16 @@ input_select:
   remote_harmony:
     name: Harmony
     options:
-    - PowerOff
-    - DVD/Bluray
-    - Fire TV
-    - Radio
-    - Zattoo
-    - Plattenspieler
-    - Chromecast
-    - PC spiegeln
-    - Xbox
-    - Klimaaanlage
+      - PowerOff
+      - DVD/Bluray
+      - Fire TV
+      - Radio
+      - Zattoo
+      - Plattenspieler
+      - Chromecast
+      - PC spiegeln
+      - Xbox
+      - Klimaaanlage
 
 zone: !include zones.yaml
 group: !include groups.yaml

@@ -1,0 +1,3 @@
+- name: HMIP CLOUD
+  accesspoint: !secret HOMEMATICIP_ACCESS_POINT_1
+  authtoken: !secret HOMEMATICIP_AUTH_TOKEN_1

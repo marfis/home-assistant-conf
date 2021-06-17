@@ -1,4 +1,26 @@
-# Zones
+# Apartment
+
+apartment_off:
+  alias: Abreise / Aus
+  sequence:
+    - service: script.turn_on
+      data:
+        entity_id: script.light_off
+    - service: script.turn_on
+      data:
+        entity_id: script.climate_apartment_off
+
+apartment_on:
+  alias: Ankunft / Reset
+  sequence:
+    - service: script.turn_on
+      data:
+        entity_id: script.light_reset
+    - service: script.turn_on
+      data:
+        entity_id: script.climate_apartment_auto
+
+# Scenes
 
 go_to_bed:
   alias: Zu Bett
@@ -24,14 +46,11 @@ sleep:
       data:
         entity_id: script.light_off
 
+# Zones
+
 coming_home_area:
   alias: Heimkommen
   sequence:
-    - service: script.turn_on
-      data:
-        entity_id: script.climate_apartment_on
-    - delay:
-        seconds: 5
     - service: script.turn_on
       data:
         entity_id: script.climate_apartment_auto
@@ -46,7 +65,7 @@ leaving_home_area:
   sequence:
     - service: script.turn_on
       data:
-        entity_id: script.lights_off
+        entity_id: script.light_off
     - service: script.turn_on
       data:
         entity_id: script.climate_apartment_away
@@ -58,9 +77,6 @@ coming_home:
       data:
         entity_id: light.hallway
         effect: "night"
-    - service: script.turn_on
-      data:
-        entity_id: script.climate_apartment_boosts
 
 # Licht
 
@@ -100,7 +116,7 @@ light_off_main:
         entity_id: group.light_apartment_ceiling
 
 light_on_main:
-  alias: Licht Aus (Decke)
+  alias: Licht An (Decke)
   icon: "mdi:power-plug-off"
   sequence:
     - service: light.turn_on
@@ -109,132 +125,111 @@ light_on_main:
 
 # Heizung aus
 
+climate_livingroom_off:
+  alias: Heizung Aus Wohnzimmer
+  sequence:
+    - service: climate.set_hvac_mode
+      data:
+        entity_id: climate.hmip_cloud_livingroom
+        hvac_mode: heat
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.hmip_cloud_livingroom
+        temperature: 7
+climate_workroom_off:
+  alias: Heizung Aus Hobbyraum
+  sequence:
+    - service: climate.set_hvac_mode
+      data:
+        entity_id: climate.hmip_cloud_workroom
+        hvac_mode: heat
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.hmip_cloud_workroom
+        temperature: 7
+climate_kitchen_off:
+  alias: Heizung Aus Küche
+  sequence:
+    - service: climate.set_hvac_mode
+      data:
+        entity_id: climate.hmip_cloud_kitchen
+        hvac_mode: heat
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.hmip_cloud_kitchen
+        temperature: 7
+climate_bedroom_off:
+  alias: Heizung Aus Schlafzimmer
+  sequence:
+    - service: climate.set_hvac_mode
+      data:
+        entity_id: climate.hmip_cloud_bedroom
+        hvac_mode: heat
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.hmip_cloud_bedroom
+        temperature: 7
+climate_bathroom_off:
+  alias: Heizung Aus Bad
+  sequence:
+    - service: climate.set_hvac_mode
+      data:
+        entity_id: climate.hmip_cloud_bathroom
+        hvac_mode: heat
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.hmip_cloud_bathroom
+        temperature: 7
+
 climate_apartment_off:
   alias: Heizung Aus Apartment
   sequence:
     - service: climate.set_hvac_mode
       data:
         entity_id: group.climate_apartment
-        hvac_mode: "off"
-climate_livingroom_off:
-  alias: Heizung Aus Wohnzimmer
-  sequence:
-    - service: climate.set_hvac_mode
-      data:
-        entity_id: climate.wohnzimmer_wandthermostat
-        hvac_mode: "off"
-climate_workroom_off:
-  alias: Heizung Aus Hobbyraum
-  sequence:
-    - service: climate.set_hvac_mode
-      data:
-        entity_id: climate.hobbyraum_wandthermostat
-        hvac_mode: "off"
-climate_kitchen_off:
-  alias: Heizung Aus Küche
-  sequence:
-    - service: climate.set_hvac_mode
-      data:
-        entity_id: climate.kuche_wandthermostat
-        hvac_mode: "off"
-climate_bedroom_off:
-  alias: Heizung Aus Schlafzimmer
-  sequence:
-    - service: climate.set_hvac_mode
-      data:
-        entity_id: climate.schlafzimmer_wandthermostat
-        hvac_mode: "off"
-climate_bathroom_off:
-  alias: Heizung Aus Bad
-  sequence:
-    - service: climate.set_hvac_mode
-      data:
-        entity_id: climate.bad_wandthermostat
-        hvac_mode: "off"
-
-# Heizung an
-
-climate_livingroom_on:
-  alias: Heizung An Wohnzimmer
-  sequence:
-    - service: climate.set_preset_mode
-      data:
-        entity_id: climate.wohnzimmer_wandthermostat
-        preset_mode: "on"
-climate_workroom_on:
-  alias: Heizung An Hobbyraum
-  sequence:
-    - service: climate.set_preset_mode
-      data:
-        entity_id: climate.hobbyraum_wandthermostat
-        preset_mode: "on"
-climate_kitchen_on:
-  alias: Heizung An Küche
-  sequence:
-    - service: climate.set_preset_mode
-      data:
-        entity_id: climate.kuche_wandthermostat
-        preset_mode: "on"
-climate_bedroom_on:
-  alias: Heizung An Schlafzimmer
-  sequence:
-    - service: climate.set_preset_mode
-      data:
-        entity_id: climate.schlafzimmer_wandthermostat
-        preset_mode: "on"
-climate_bathroom_on:
-  alias: Heizung An Bad
-  sequence:
-    - service: climate.set_preset_mode
-      data:
-        entity_id: climate.bad_wandthermostat
-        preset_mode: "on"
-
-climate_apartment_on:
-  alias: Heizung An Apartment
-  sequence:
-    - service: climate.set_preset_mode
+        hvac_mode: heat
+    - service: climate.set_temperature
       data:
         entity_id: group.climate_apartment
-        preset_mode: "on"
+        temperature: 7
 
-# Heizung Auto
+# Heating auto
 
 climate_livingroom_auto:
   alias: Heizung Auto Wohnzimmer
   sequence:
     - service: climate.set_hvac_mode
       data:
-        entity_id: climate.wohnzimmer_wandthermostat
+        entity_id: climate.hmip_cloud_livingroom
         hvac_mode: auto
 climate_workroom_auto:
   alias: Heizung Auto Hobbyraum
   sequence:
     - service: climate.set_hvac_mode
       data:
-        entity_id: climate.hobbyraum_wandthermostat
+        entity_id: climate.hmip_cloud_workroom
         hvac_mode: auto
 climate_kitchen_auto:
   alias: Heizung Auto Küche
   sequence:
     - service: climate.set_hvac_mode
       data:
-        entity_id: climate.kuche_wandthermostat
+        entity_id: climate.hmip_cloud_kitchen
         hvac_mode: auto
 climate_bedroom_auto:
   alias: Heizung Auto Schlafzimmer
   sequence:
     - service: climate.set_hvac_mode
       data:
-        entity_id: climate.schlafzimmer_wandthermostat
+        entity_id: climate.hmip_cloud_bedroom
         hvac_mode: auto
 climate_bathroom_auto:
   alias: Heizung Auto Bad
   sequence:
     - service: climate.set_hvac_mode
       data:
-        entity_id: climate.bad_wandthermostat
-        hvac_mode: auto
+        entity_id: climate.hmip_cloud_bathroom
+        hvac_mode: "auto"
 
 climate_apartment_auto:
   alias: Heizung Auto Apartment
@@ -242,105 +237,47 @@ climate_apartment_auto:
     - service: climate.set_hvac_mode
       data:
         entity_id: group.climate_apartment
-        hvac_mode: auto
-    - delay:
-        seconds: 30
-    - service: climate.set_preset_mode
-      data:
-        entity_id: climate.hobbyraum_wandthermostat
-        preset_mode: eco
+        hvac_mode: "auto"
 
-# Heizung Away
+# Heating eco
 
-climate_livingroom_away:
-  alias: Heizung Abwesend Wohnzimmer
-  sequence:
-    - service: climate.set_preset_mode
-      data:
-        entity_id: climate.wohnzimmer_wandthermostat
-        preset_mode: away
-climate_workroom_away:
-  alias: Heizung Abwesend Hobbyraum
-  sequence:
-    - service: climate.set_preset_mode
-      data:
-        entity_id: climate.hobbyraum_wandthermostat
-        preset_mode: away
-climate_kitchen_away:
-  alias: Heizung Abwesend Küche
-  sequence:
-    - service: climate.set_preset_mode
-      data:
-        entity_id: climate.kuche_wandthermostat
-        preset_mode: away
-climate_bedroom_away:
-  alias: Heizung Abwesend Schlafzimmer
-  sequence:
-    - service: climate.set_preset_mode
-      data:
-        entity_id: climate.schlafzimmer_wandthermostat
-        preset_mode: away
-climate_bathroom_away:
-  alias: Heizung Abwesend Bad
-  sequence:
-    - service: climate.set_preset_mode
-      data:
-        entity_id: climate.bad_wandthermostat
-        preset_mode: away
-
-climate_apartment_away:
-  alias: Heizung Abwesend Apartment
-  sequence:
-    - service: climate.set_preset_mode
-      data:
-        entity_id: group.climate_apartment
-        preset_mode: away
-
-# Heizung Eco
-
-climate_livingroom_eco:
-  alias: Heizung Eco Wohnzimmer
-  sequence:
-    - service: climate.set_preset_mode
-      data:
-        entity_id: climate.wohnzimmer_wandthermostat
-        preset_mode: eco
 climate_workroom_eco:
   alias: Heizung Eco Hobbyraum
   sequence:
-    - service: climate.set_preset_mode
+    - service: climate.set_hvac_mode
       data:
-        entity_id: climate.hobbyraum_wandthermostat
-        preset_mode: eco
-climate_kitchen_eco:
-  alias: Heizung Eco Küche
-  sequence:
-    - service: climate.set_preset_mode
+        entity_id: climate.hmip_cloud_workroom
+        hvac_mode: heat
+    - service: climate.set_temperature
       data:
-        entity_id: climate.kuche_wandthermostat
-        preset_mode: eco
-climate_bedroom_eco:
-  alias: Heizung Eco Schlafzimmer
-  sequence:
-    - service: climate.set_preset_mode
-      data:
-        entity_id: climate.schlafzimmer_wandthermostat
-        preset_mode: eco
-climate_bathroom_eco:
-  alias: Heizung Eco Bad
-  sequence:
-    - service: climate.set_preset_mode
-      data:
-        entity_id: climate.bad_wandthermostat
-        preset_mode: eco
+        entity_id: climate.hmip_cloud_workroom
+        temperature: 17
 
 climate_apartment_eco:
   alias: Heizung Eco Apartment
   sequence:
-    - service: climate.set_preset_mode
+    - service: homematicip_cloud.activate_eco_mode_with_period
       data:
-        entity_id: group.climate_apartment
-        preset_mode: eco
+        endtime: "3000-01-01 00:00"
+climate_apartment_eco_off:
+  alias: Heizung Eco Apartment
+  sequence:
+    - service: homematicip_cloud.deactivate_eco_mode
+
+
+# Heating away
+
+climate_apartment_away:
+  alias: Heizung Abwesend Apartment
+  sequence:
+    - service: homematicip_cloud.activate_vacation
+      data:
+        endtime: "3000-01-01 00:00"
+        temperature: 12
+climate_apartment_away_off:
+  alias: Heizung Abwesend Apartment
+  sequence:
+    - service: homematicip_cloud.deactivate_vacation
 
 # Heizung Boost
 
@@ -349,36 +286,36 @@ climate_livingroom_boost:
   sequence:
     - service: climate.set_preset_mode
       data:
-        entity_id: climate.wohnzimmer_wandthermostat
-        preset_mode: boost
+        entity_id: climate.hmip_cloud_livingroom
+        preset_mode: "boost"
 climate_workroom_boost:
   alias: Heizung Boost Hobbyraum
   sequence:
     - service: climate.set_preset_mode
       data:
-        entity_id: climate.hobbyraum_wandthermostat
-        preset_mode: boost
+        entity_id: climate.hmip_cloud_workroom
+        preset_mode: "boost"
 climate_kitchen_boost:
   alias: Heizung Boost Küche
   sequence:
     - service: climate.set_preset_mode
       data:
-        entity_id: climate.kuche_wandthermostat
-        preset_mode: boost
+        entity_id: climate.hmip_cloud_kitchen
+        preset_mode: "boost"
 climate_bedroom_boost:
   alias: Heizung Boost Schlafzimmer
   sequence:
     - service: climate.set_preset_mode
       data:
-        entity_id: climate.schlafzimmer_wandthermostat
-        preset_mode: boost
+        entity_id: climate.hmip_cloud_bedroom
+        preset_mode: "boost"
 climate_bathroom_boost:
   alias: Heizung Boost Bad
   sequence:
     - service: climate.set_preset_mode
       data:
-        entity_id: climate.bad_wandthermostat
-        preset_mode: boost
+        entity_id: climate.hmip_cloud_bathroom
+        preset_mode: "boost"
 
 climate_apartment_boost:
   alias: Heizung Boost Apartment
@@ -386,56 +323,20 @@ climate_apartment_boost:
     - service: climate.set_preset_mode
       data:
         entity_id: group.climate_apartment
-        preset_mode: boost
-        
-# Heizung Comfort
-
-climate_livingroom_comfort:
-  alias: Heizung Comfort Wohnzimmer
-  sequence:
-    - service: climate.set_preset_mode
-      data:
-        entity_id: climate.wohnzimmer_wandthermostat
-        preset_mode: comfort
-climate_workroom_comfort:
-  alias: Heizung Comfort Hobbyraum
-  sequence:
-    - service: climate.set_preset_mode
-      data:
-        entity_id: climate.hobbyraum_wandthermostat
-        preset_mode: comfort
-climate_kitchen_comfort:
-  alias: Heizung Comfort Küche
-  sequence:
-    - service: climate.set_preset_mode
-      data:
-        entity_id: climate.kuche_wandthermostat
-        preset_mode: comfort
-climate_bedroom_comfort:
-  alias: Heizung Comfort Schlafzimmer
-  sequence:
-    - service: climate.set_preset_mode
-      data:
-        entity_id: climate.schlafzimmer_wandthermostat
-        preset_mode: comfort
-climate_bathroom_comfort:
-  alias: Heizung Comfort Bad
-  sequence:
-    - service: climate.set_preset_mode
-      data:
-        entity_id: climate.bad_wandthermostat
-        preset_mode: comfort
-
-climate_apartment_comfort:
-  alias: Heizung Comfort Apartment
+        preset_mode: "boost"
+climate_apartment_boost_off:
+  alias: Heizung Boost Apartment aus
   sequence:
     - service: climate.set_preset_mode
       data:
         entity_id: group.climate_apartment
-        preset_mode: comfort
-    - delay:
-        seconds: 30
-    - service: climate.set_preset_mode
+        preset_mode: "none"
+
+# Heating Others
+
+climate_reset_energy_counter:
+  alias: Heizung Boost Apartment
+  sequence:
+    - service: homematicip_cloud.reset_energy_counter
       data:
-        entity_id: climate.hobbyraum_wandthermostat
-        preset_mode: eco
+        entity_id: all

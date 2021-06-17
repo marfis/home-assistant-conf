@@ -1,3 +1,4 @@
+# Lights
 livingroom_desklamp:
   name: Schreibtischlampe
   entities:
@@ -10,8 +11,23 @@ livingroom_globe:
     - switch.livingroom_globe
     - light.50450440f4cfa21eec11
 
+bedroom_lamp:
+  name: Stehlampe
+  entities:
+    - switch.bedroom_lamp
+    - light.36837871bcddc23cbb4b
+
+lamps:
+  name: Lampen
+  entities:
+    - group.livingroom_desklamp
+    - group.livingroom_globe
+    - group.bedroom_lamp
+    - switch.livingroom_uplighter
+    - switch.loggia_uplighter
+
 light_livingroom_ceiling:
-  name: Wohnzimmer
+  name: Wohnzimmer Decke
   entities:
     - light.livingroom_1
     - light.livingroom_2
@@ -32,10 +48,21 @@ light_kitchenarea:
     - switch.loggia_uplighter
 
 light_kitchenarea_ceiling:
-  name: Küchenbereich Decken
+  name: Küchenbereich Decke
   entities:
     - light.kitchen
     - light.loggia
+
+light_bedroom:
+  name: Schlafzimmer
+  entities:
+    - light.bedroom
+    - group.bedroom_lamp
+
+light_bedroom_ceiling:
+  name: Schlafzimmer
+  entities:
+    - light.bedroom
 
 light_nightlight:
   name: Nachtlicht Gruppe
@@ -60,23 +87,31 @@ light_apartment:
   entities:
     - light.hallway
     - light.bathroom
-    - light.bedroom
+    - group.light_bedroom
     - group.light_livingroom
     - group.light_kitchenarea
-    - switch.livingroom_uplighter
-    - group.livingroom_globe
-    - group.livingroom_desklamp
 
+# Climate
+climate_apartment:
+  name: Heizung
+  entities:
+    - climate.hmip_cloud_livingroom
+    - climate.hmip_cloud_kitchen
+    - climate.hmip_cloud_bathroom
+    - climate.hmip_cloud_workroom
+    - climate.hmip_cloud_bedroom
+
+# Apartment
 livingroom:
   name: Wohnzimmer
   entities:
-    - climate.wohnzimmer_wandthermostat
+    - climate.hmip_cloud_livingroom
     - group.light_livingroom
 
 kitchen:
   name: Küche
   entities:
-    - climate.kuche_wandthermostat
+    - climate.hmip_cloud_kitchen
     - light.kitchen
 
 loggia:
@@ -88,20 +123,19 @@ loggia:
 bedroom:
   name: Schlafzimmer
   entities:
-    - switch.bedroom_lamp
-    - climate.schlafzimmer_wandthermostat
-    - light.bedroom
+    - climate.hmip_cloud_bedroom
+    - group.light_bedroom
 
 bathroom:
   name: Bad
   entities:
-    - climate.bad_wandthermostat
+    - climate.hmip_cloud_bathroom
     - light.bathroom
 
 workroom:
   name: Hobbyraum
   entities:
-    - climate.hobbyraum_wandthermostat
+    - climate.hmip_cloud_workroom
 
 hallway:
   name: Flur
@@ -118,12 +152,3 @@ apartment:
     - group.bedroom
     - group.kitchen
     - group.loggia
-
-climate_apartment:
-  name: Heizung
-  entities:
-    - climate.hobbyraum_wandthermostat
-    - climate.bad_wandthermostat
-    - climate.schlafzimmer_wandthermostat
-    - climate.kuche_wandthermostat
-    - climate.wohnzimmer_wandthermostat

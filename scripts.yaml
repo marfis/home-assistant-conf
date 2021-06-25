@@ -68,7 +68,7 @@ leaving_home_area:
         entity_id: script.light_off
     - service: script.turn_on
       data:
-        entity_id: script.climate_apartment_away
+        entity_id: script.climate_apartment_off
 
 coming_home:
   alias: Heimkommen
@@ -264,6 +264,74 @@ climate_apartment_eco_off:
   sequence:
     - service: homematicip_cloud.deactivate_eco_mode
 
+# Heating set temperature
+climate_livingroom_set_temperature:
+  alias: Temperatur setzen
+  fields:
+    temperature:
+      description: "°C"
+      example: 17
+  sequence:
+    service: climate.set_temperature
+    data:
+      entity_id: climate.hmip_cloud_livingroom
+      #temperature: {{temperature}}
+climate_workroom_set_temperature:
+  alias: Temperatur setzen
+  fields:
+    temperature:
+      description: "°C"
+      example: 17
+  sequence:
+    service: climate.set_temperature
+    data:
+      entity_id: climate.hmip_cloud_workroom
+#      temperature: {{temperature}}
+climate_kitchen_set_temperature:
+  alias: Temperatur setzen
+  fields:
+    temperature:
+      description: "°C"
+      example: 17
+  sequence:
+    service: climate.set_temperature
+    data:
+      entity_id: climate.hmip_cloud_kitchen
+ #     temperature: {{temperature}}
+climate_bedroom_set_temperature:
+  alias: Temperatur setzen
+  fields:
+    temperature:
+      description: "°C"
+      example: 17
+  sequence:
+    service: climate.set_temperature
+    data:
+      entity_id: climate.hmip_cloud_bedroom
+  #    temperature: {{temperature}}
+climate_bathroom_set_temperature:
+  alias: Temperatur setzen
+  fields:
+    temperature:
+      description: "°C"
+      example: 17
+  sequence:
+    service: climate.set_temperature
+    data:
+      entity_id: climate.hmip_cloud_bathroom
+   #   temperature: {{temperature}}
+
+climate_apartment_set_temperature:
+  alias: Temperatur setzen
+  fields:
+    temperature:
+      description: "°C"
+      example: 17
+  sequence:
+    service: climate.set_temperature
+    data:
+      entity_id: group.climate_apartment
+    #  temperature: {{temperature}}
 
 # Heating away
 

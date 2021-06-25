@@ -729,44 +729,264 @@
                                     "type": "horizontal-stack",
                                     "cards": [
                                         {
-                                            "type": "sensor",
-                                            "entity": "sensor.hmip_cloud_thermostat_temperature_3",
-                                            "graph": "line",
-                                            "name": "Temperatur",
-                                            "detail": 1,
-                                            "unit": "\u00b0C"
+                                            "type": "entities",
+                                            "entities": [
+                                                {
+                                                    "entity": "binary_sensor.hmip_cloud_controller_battery_3",
+                                                    "name": "Heizungsthermostat"
+                                                },
+                                                {
+                                                    "entity": "binary_sensor.hmip_cloud_thermostat_battery_3",
+                                                    "name": "Wandthermostat"
+                                                }
+                                            ]
                                         },
                                         {
-                                            "type": "sensor",
-                                            "entity": "sensor.hmip_cloud_thermostat_temperature",
-                                            "graph": "line",
-                                            "name": "Temperatur",
-                                            "detail": 1,
-                                            "unit": "\u00b0C"
+                                            "type": "entities",
+                                            "entities": [
+                                                {
+                                                    "entity": "binary_sensor.hmip_cloud_controller_battery",
+                                                    "name": "Heizungsthermostat"
+                                                },
+                                                {
+                                                    "entity": "binary_sensor.hmip_cloud_thermostat_battery",
+                                                    "name": "Wandthermostat"
+                                                }
+                                            ]
                                         },
                                         {
-                                            "type": "sensor",
-                                            "entity": "sensor.hmip_cloud_thermostat_temperature_4",
-                                            "graph": "line",
-                                            "name": "Temperatur",
-                                            "detail": 1,
-                                            "unit": "\u00b0C"
+                                            "type": "entities",
+                                            "entities": [
+                                                {
+                                                    "entity": "binary_sensor.hmip_cloud_controller_battery_4",
+                                                    "name": "Heizungsthermostat"
+                                                },
+                                                {
+                                                    "entity": "binary_sensor.hmip_cloud_thermostat_battery_4",
+                                                    "name": "Wandthermostat"
+                                                }
+                                            ]
                                         },
                                         {
-                                            "type": "sensor",
-                                            "entity": "sensor.hmip_cloud_thermostat_temperature_5",
-                                            "graph": "line",
-                                            "name": "Temperatur",
-                                            "detail": 1,
-                                            "unit": "\u00b0C"
+                                            "type": "entities",
+                                            "entities": [
+                                                {
+                                                    "entity": "binary_sensor.hmip_cloud_controller_battery_5",
+                                                    "name": "Heizungsthermostat"
+                                                },
+                                                {
+                                                    "entity": "binary_sensor.hmip_cloud_thermostat_battery_5",
+                                                    "name": "Wandthermostat"
+                                                }
+                                            ]
                                         },
                                         {
-                                            "type": "sensor",
-                                            "entity": "sensor.hmip_cloud_thermostat_temperature_2",
-                                            "graph": "line",
-                                            "name": "Temperatur",
-                                            "detail": 1,
-                                            "unit": "\u00b0C"
+                                            "type": "entities",
+                                            "entities": [
+                                                {
+                                                    "entity": "binary_sensor.hmip_cloud_controller_battery_2",
+                                                    "name": "Heizungsthermostat"
+                                                },
+                                                {
+                                                    "entity": "binary_sensor.hmip_cloud_thermostat_battery_2",
+                                                    "name": "Wandthermostat"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ],
+                            "name": "Wand"
+                        }
+                    ]
+                },
+                {
+                    "title": "Climate",
+                    "path": "climate",
+                    "icon": "mdi:water-percent",
+                    "panel": true,
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "vertical-stack",
+                            "cards": [
+                                {
+                                    "type": "horizontal-stack",
+                                    "cards": [
+                                        {
+                                            "type": "vertical-stack",
+                                            "cards": [
+                                                {
+                                                    "type": "markdown",
+                                                    "content": "## TROTEC PAC 3900 X\nMobile Klimaanlage\n\n"
+                                                },
+                                                {
+                                                    "type": "horizontal-stack",
+                                                    "cards": [
+                                                        {
+                                                            "type": "entities",
+                                                            "entities": [
+                                                                {
+                                                                    "entity": "switch.trotec_night_mode",
+                                                                    "name": "Nachtmodus",
+                                                                    "icon": "mdi:bed"
+                                                                },
+                                                                {
+                                                                    "entity": "switch.trotec_swing",
+                                                                    "icon": "mdi:fan-plus",
+                                                                    "name": "Schwingen"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "vertical-stack",
+                                                            "cards": [
+                                                                {
+                                                                    "type": "horizontal-stack",
+                                                                    "cards": [
+                                                                        {
+                                                                            "type": "button",
+                                                                            "icon": "mdi:fan",
+                                                                            "tap_action": {
+                                                                                "action": "call-service",
+                                                                                "service": "switch.turn_on",
+                                                                                "service_data": {
+                                                                                    "entity_id": "switch.trotec_fan_auto"
+                                                                                }
+                                                                            }
+                                                                        },
+                                                                        {
+                                                                            "type": "button",
+                                                                            "icon": "mdi:fan-speed-1",
+                                                                            "tap_action": {
+                                                                                "action": "call-service",
+                                                                                "service": "switch.turn_on",
+                                                                                "service_data": {
+                                                                                    "entity_id": "switch.trotec_fan_1"
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "type": "horizontal-stack",
+                                                                    "cards": [
+                                                                        {
+                                                                            "type": "button",
+                                                                            "icon": "mdi:fan-speed-2",
+                                                                            "tap_action": {
+                                                                                "action": "call-service",
+                                                                                "service": "switch.turn_on",
+                                                                                "service_data": {
+                                                                                    "entity_id": "switch.trotec_fan_2"
+                                                                                }
+                                                                            }
+                                                                        },
+                                                                        {
+                                                                            "type": "button",
+                                                                            "icon": "mdi:fan-speed-3",
+                                                                            "tap_action": {
+                                                                                "action": "call-service",
+                                                                                "service": "switch.turn_on",
+                                                                                "service_data": {
+                                                                                    "entity_id": "switch.trotec_fan_3"
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "vertical-stack",
+                                            "cards": [
+                                                {
+                                                    "type": "horizontal-stack",
+                                                    "cards": [
+                                                        {
+                                                            "type": "button",
+                                                            "name": "Aus",
+                                                            "icon": "mdi:power",
+                                                            "tap_action": {
+                                                                "action": "call-service",
+                                                                "service": "switch.turn_off",
+                                                                "service_data": {
+                                                                    "entity_id": "switch.trotec_power"
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "button",
+                                                            "name": "Auto",
+                                                            "icon": "mdi:calendar-sync-outline",
+                                                            "tap_action": {
+                                                                "action": "call-service",
+                                                                "service": "switch.turn_on",
+                                                                "service_data": {
+                                                                    "entity_id": "switch.trotec_mode_auto"
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "button",
+                                                            "name": "K\u00fchlen",
+                                                            "icon": "mdi:emoticon-cool-outline",
+                                                            "tap_action": {
+                                                                "action": "call-service",
+                                                                "service": "switch.turn_on",
+                                                                "service_data": {
+                                                                    "entity_id": "switch.trotec_mode_cool"
+                                                                }
+                                                            }
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "horizontal-stack",
+                                                    "cards": [
+                                                        {
+                                                            "type": "button",
+                                                            "name": "Ventilator",
+                                                            "icon": "mdi:fan",
+                                                            "tap_action": {
+                                                                "action": "call-service",
+                                                                "service": "switch.turn_on",
+                                                                "service_data": {
+                                                                    "entity_id": "switch.trotec_mode_fan"
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "button",
+                                                            "name": "Heizen",
+                                                            "icon": "mdi:fire",
+                                                            "tap_action": {
+                                                                "action": "call-service",
+                                                                "service": "switch.turn_on",
+                                                                "service_data": {
+                                                                    "entity_id": "switch.trotec_mode_heat"
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "button",
+                                                            "name": "rL -",
+                                                            "icon": "mdi:water-percent",
+                                                            "tap_action": {
+                                                                "action": "call-service",
+                                                                "service": "switch.turn_on",
+                                                                "service_data": {
+                                                                    "entity_id": "switch.trotec_mode_dry"
+                                                                }
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            ]
                                         }
                                     ]
                                 },
@@ -774,44 +994,458 @@
                                     "type": "horizontal-stack",
                                     "cards": [
                                         {
-                                            "type": "sensor",
-                                            "entity": "sensor.hmip_cloud_thermostat_humidity_3",
-                                            "graph": "line",
-                                            "name": "Feuchtigkeit",
-                                            "detail": 1,
-                                            "unit": "rF"
+                                            "type": "vertical-stack",
+                                            "cards": [
+                                                {
+                                                    "type": "horizontal-stack",
+                                                    "cards": [
+                                                        {
+                                                            "type": "markdown",
+                                                            "content": "### Temperatur"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "horizontal-stack",
+                                                    "cards": [
+                                                        {
+                                                            "type": "vertical-stack",
+                                                            "cards": [
+                                                                {
+                                                                    "type": "button",
+                                                                    "name": "Cool",
+                                                                    "tap_action": {
+                                                                        "action": "call-service",
+                                                                        "service": "switch.turn_on",
+                                                                        "service_data": {
+                                                                            "entity_id": "switch.trotec_temp_17"
+                                                                        }
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "button",
+                                                                    "name": "21 \u00b0C",
+                                                                    "tap_action": {
+                                                                        "action": "call-service",
+                                                                        "service": "switch.turn_on",
+                                                                        "service_data": {
+                                                                            "entity_id": "switch.trotec_temp_21"
+                                                                        }
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "button",
+                                                                    "name": "22 \u00b0C",
+                                                                    "tap_action": {
+                                                                        "action": "call-service",
+                                                                        "service": "switch.turn_on",
+                                                                        "service_data": {
+                                                                            "entity_id": "switch.trotec_temp_22"
+                                                                        }
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "button",
+                                                                    "name": "23 \u00b0C",
+                                                                    "tap_action": {
+                                                                        "action": "call-service",
+                                                                        "service": "switch.turn_on",
+                                                                        "service_data": {
+                                                                            "entity_id": "switch.trotec_temp_23"
+                                                                        }
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "vertical-stack",
+                                                            "cards": [
+                                                                {
+                                                                    "type": "button",
+                                                                    "name": "Heat",
+                                                                    "tap_action": {
+                                                                        "action": "call-service",
+                                                                        "service": "switch.turn_on",
+                                                                        "service_data": {
+                                                                            "entity_id": "switch.trotec_temp_30"
+                                                                        }
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "button",
+                                                                    "name": "24 \u00b0C",
+                                                                    "tap_action": {
+                                                                        "action": "call-service",
+                                                                        "service": "switch.turn_on",
+                                                                        "service_data": {
+                                                                            "entity_id": "switch.trotec_temp_24"
+                                                                        }
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "button",
+                                                                    "name": "25 \u00b0C",
+                                                                    "tap_action": {
+                                                                        "action": "call-service",
+                                                                        "service": "switch.turn_on",
+                                                                        "service_data": {
+                                                                            "entity_id": "switch.trotec_temp_25"
+                                                                        }
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "button",
+                                                                    "name": "26 \u00b0C",
+                                                                    "tap_action": {
+                                                                        "action": "call-service",
+                                                                        "service": "switch.turn_on",
+                                                                        "service_data": {
+                                                                            "entity_id": "switch.trotec_temp_26"
+                                                                        }
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
                                         },
                                         {
-                                            "type": "sensor",
-                                            "entity": "sensor.hmip_cloud_thermostat_humidity",
-                                            "graph": "line",
-                                            "name": "Feuchtigkeit",
-                                            "detail": 1,
-                                            "unit": "rF"
+                                            "type": "vertical-stack",
+                                            "cards": [
+                                                {
+                                                    "type": "markdown",
+                                                    "content": "### Ausschalten in"
+                                                },
+                                                {
+                                                    "type": "horizontal-stack",
+                                                    "cards": [
+                                                        {
+                                                            "type": "vertical-stack",
+                                                            "cards": [
+                                                                {
+                                                                    "type": "button",
+                                                                    "name": "0.5 h",
+                                                                    "tap_action": {
+                                                                        "action": "call-service",
+                                                                        "service": "switch.turn_on",
+                                                                        "service_data": {
+                                                                            "entity_id": "switch.trotec_timer_off_30m"
+                                                                        }
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "button",
+                                                                    "name": "1 h",
+                                                                    "tap_action": {
+                                                                        "action": "call-service",
+                                                                        "service": "switch.turn_on",
+                                                                        "service_data": {
+                                                                            "entity_id": "switch.trotec_timer_off_60m"
+                                                                        }
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "button",
+                                                                    "name": "2 h",
+                                                                    "tap_action": {
+                                                                        "action": "call-service",
+                                                                        "service": "switch.turn_on",
+                                                                        "service_data": {
+                                                                            "entity_id": "switch.trotec_timer_off_120m"
+                                                                        }
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "button",
+                                                                    "name": "3 h",
+                                                                    "tap_action": {
+                                                                        "action": "call-service",
+                                                                        "service": "switch.turn_on",
+                                                                        "service_data": {
+                                                                            "entity_id": "switch.trotec_timer_off_3h"
+                                                                        }
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "vertical-stack",
+                                                            "cards": [
+                                                                {
+                                                                    "type": "button",
+                                                                    "name": "4 h",
+                                                                    "tap_action": {
+                                                                        "action": "call-service",
+                                                                        "service": "switch.turn_on",
+                                                                        "service_data": {
+                                                                            "entity_id": "switch.trotec_timer_off_4h"
+                                                                        }
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "button",
+                                                                    "name": "8 h",
+                                                                    "tap_action": {
+                                                                        "action": "call-service",
+                                                                        "service": "switch.turn_on",
+                                                                        "service_data": {
+                                                                            "entity_id": "switch.trotec_timer_off_8h"
+                                                                        }
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "button",
+                                                                    "name": "12 h",
+                                                                    "tap_action": {
+                                                                        "action": "call-service",
+                                                                        "service": "switch.turn_on",
+                                                                        "service_data": {
+                                                                            "entity_id": "switch.trotec_timer_off_12h"
+                                                                        }
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "button",
+                                                                    "name": "Reset",
+                                                                    "tap_action": {
+                                                                        "action": "call-service",
+                                                                        "service": "switch.turn_on",
+                                                                        "service_data": {
+                                                                            "entity_id": "switch.trotec_timer_off_0m"
+                                                                        }
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
                                         },
                                         {
-                                            "type": "sensor",
-                                            "entity": "sensor.hmip_cloud_thermostat_humidity_4",
-                                            "graph": "line",
-                                            "name": "Feuchtigkeit",
-                                            "detail": 1,
-                                            "unit": "rF"
+                                            "type": "vertical-stack",
+                                            "cards": [
+                                                {
+                                                    "type": "markdown",
+                                                    "content": "### Einschalten in"
+                                                },
+                                                {
+                                                    "type": "horizontal-stack",
+                                                    "cards": [
+                                                        {
+                                                            "type": "vertical-stack",
+                                                            "cards": [
+                                                                {
+                                                                    "type": "button",
+                                                                    "name": "0.5 h",
+                                                                    "tap_action": {
+                                                                        "action": "call-service",
+                                                                        "service": "switch.turn_on",
+                                                                        "service_data": {
+                                                                            "entity_id": "switch.trotec_timer_on_30m"
+                                                                        }
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "button",
+                                                                    "name": "1 h",
+                                                                    "tap_action": {
+                                                                        "action": "call-service",
+                                                                        "service": "switch.turn_on",
+                                                                        "service_data": {
+                                                                            "entity_id": "switch.trotec_timer_on_60m"
+                                                                        }
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "button",
+                                                                    "name": "2 h",
+                                                                    "tap_action": {
+                                                                        "action": "call-service",
+                                                                        "service": "switch.turn_on",
+                                                                        "service_data": {
+                                                                            "entity_id": "switch.trotec_timer_on_120m"
+                                                                        }
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "button",
+                                                                    "name": "3 h",
+                                                                    "tap_action": {
+                                                                        "action": "call-service",
+                                                                        "service": "switch.turn_on",
+                                                                        "service_data": {
+                                                                            "entity_id": "switch.trotec_timer_on_3h"
+                                                                        }
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "vertical-stack",
+                                                            "cards": [
+                                                                {
+                                                                    "type": "button",
+                                                                    "name": "4 h",
+                                                                    "tap_action": {
+                                                                        "action": "call-service",
+                                                                        "service": "switch.turn_on",
+                                                                        "service_data": {
+                                                                            "entity_id": "switch.trotec_timer_on_4h"
+                                                                        }
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "button",
+                                                                    "name": "8 h",
+                                                                    "tap_action": {
+                                                                        "action": "call-service",
+                                                                        "service": "switch.turn_on",
+                                                                        "service_data": {
+                                                                            "entity_id": "switch.trotec_timer_on_8h"
+                                                                        }
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "button",
+                                                                    "name": "12 h",
+                                                                    "tap_action": {
+                                                                        "action": "call-service",
+                                                                        "service": "switch.turn_on",
+                                                                        "service_data": {
+                                                                            "entity_id": "switch.trotec_timer_on_12h"
+                                                                        }
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "button",
+                                                                    "name": "Reset",
+                                                                    "tap_action": {
+                                                                        "action": "call-service",
+                                                                        "service": "switch.turn_on",
+                                                                        "service_data": {
+                                                                            "entity_id": "switch.trotec_timer_on_0m"
+                                                                        }
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "horizontal-stack",
+                                    "cards": [
+                                        {
+                                            "type": "vertical-stack",
+                                            "cards": [
+                                                {
+                                                    "type": "markdown",
+                                                    "content": "## Proscenic Humidifier\nLuftbefeuchter\n"
+                                                }
+                                            ]
                                         },
                                         {
-                                            "type": "sensor",
-                                            "entity": "sensor.hmip_cloud_thermostat_humidity_5",
-                                            "graph": "line",
-                                            "name": "Feuchtigkeit",
-                                            "detail": 1,
-                                            "unit": "rF"
-                                        },
-                                        {
-                                            "type": "sensor",
-                                            "entity": "sensor.hmip_cloud_thermostat_humidity_2",
-                                            "graph": "line",
-                                            "name": "Feuchtigkeit",
-                                            "detail": 1,
-                                            "unit": "rF"
+                                            "type": "vertical-stack",
+                                            "cards": [
+                                                {
+                                                    "type": "horizontal-stack",
+                                                    "cards": [
+                                                        {
+                                                            "type": "button",
+                                                            "name": "An",
+                                                            "icon": "mdi:power",
+                                                            "tap_action": {
+                                                                "action": "call-service",
+                                                                "service": "switch.turn_on",
+                                                                "service_data": {
+                                                                    "entity_id": "switch.proscenic_power"
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "button",
+                                                            "name": "Nebelst\u00e4rke",
+                                                            "icon": "mdi:weather-fog",
+                                                            "tap_action": {
+                                                                "action": "call-service",
+                                                                "service": "switch.turn_on",
+                                                                "service_data": {
+                                                                    "entity_id": "switch.proscenic_mist_level"
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "button",
+                                                            "name": "rL",
+                                                            "icon": "mdi:water-percent",
+                                                            "tap_action": {
+                                                                "action": "call-service",
+                                                                "service": "switch.turn_on",
+                                                                "service_data": {
+                                                                    "entity_id": "switch.proscenic_humidity"
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "button",
+                                                            "name": "Modus",
+                                                            "icon": "mdi:type",
+                                                            "tap_action": {
+                                                                "action": "call-service",
+                                                                "service": "switch.turn_on",
+                                                                "service_data": {
+                                                                    "entity_id": "switch.proscenic_mode"
+                                                                }
+                                                            }
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "horizontal-stack",
+                                                    "cards": [
+                                                        {
+                                                            "type": "button",
+                                                            "name": "Anion",
+                                                            "icon": "mdi:atom",
+                                                            "tap_action": {
+                                                                "action": "call-service",
+                                                                "service": "switch.turn_on",
+                                                                "service_data": {
+                                                                    "entity_id": "switch.proscenic_anion"
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "button",
+                                                            "name": "Warm",
+                                                            "icon": "mdi:fire",
+                                                            "tap_action": {
+                                                                "action": "call-service",
+                                                                "service": "switch.turn_on",
+                                                                "service_data": {
+                                                                    "entity_id": "switch.proscenic_warm"
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "button",
+                                                            "name": "Timer",
+                                                            "icon": "mdi:timer-outline",
+                                                            "tap_action": {
+                                                                "action": "call-service",
+                                                                "service": "switch.turn_on",
+                                                                "service_data": {
+                                                                    "entity_id": "switch.proscenic_timer"
+                                                                }
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            ]
                                         }
                                     ]
                                 }
@@ -1139,10 +1773,10 @@
                                             "icon": "mdi:power",
                                             "tap_action": {
                                                 "action": "call-service",
-                                                "service": "input_select.select_option",
+                                                "service": "remote.turn_on",
                                                 "service_data": {
-                                                    "entity_id": "input_select.remote_harmony",
-                                                    "option": "PowerOff"
+                                                    "entity_id": "remote.harmony",
+                                                    "activity": "PowerOff"
                                                 }
                                             }
                                         },
@@ -1150,10 +1784,10 @@
                                             "type": "button",
                                             "tap_action": {
                                                 "action": "call-service",
-                                                "service": "input_select.select_option",
+                                                "service": "remote.turn_on",
                                                 "service_data": {
-                                                    "entity_id": "input_select.remote_harmony",
-                                                    "option": "DVD/Bluray"
+                                                    "entity_id": "remote.harmony",
+                                                    "activity": "DVD/Bluray"
                                                 }
                                             },
                                             "icon": "mdi:play",
@@ -1164,10 +1798,10 @@
                                             "type": "button",
                                             "tap_action": {
                                                 "action": "call-service",
-                                                "service": "input_select.select_option",
+                                                "service": "remote.turn_on",
                                                 "service_data": {
-                                                    "entity_id": "input_select.remote_harmony",
-                                                    "option": "Fire TV"
+                                                    "entity_id": "remote.harmony",
+                                                    "activity": "Fire TV"
                                                 }
                                             },
                                             "icon": "mdi:television",
@@ -1178,10 +1812,10 @@
                                             "type": "button",
                                             "tap_action": {
                                                 "action": "call-service",
-                                                "service": "input_select.select_option",
+                                                "service": "remote.turn_on",
                                                 "service_data": {
-                                                    "entity_id": "input_select.remote_harmony",
-                                                    "option": "Radio"
+                                                    "entity_id": "remote.harmony",
+                                                    "activity": "Radio"
                                                 }
                                             },
                                             "icon": "mdi:radio",
@@ -1192,24 +1826,10 @@
                                             "type": "button",
                                             "tap_action": {
                                                 "action": "call-service",
-                                                "service": "input_select.select_option",
+                                                "service": "remote.turn_on",
                                                 "service_data": {
-                                                    "entity_id": "input_select.remote_harmony",
-                                                    "option": "Zattoo"
-                                                }
-                                            },
-                                            "icon": "mdi:television-box",
-                                            "name": "Zattoo",
-                                            "show_name": false
-                                        },
-                                        {
-                                            "type": "button",
-                                            "tap_action": {
-                                                "action": "call-service",
-                                                "service": "input_select.select_option",
-                                                "service_data": {
-                                                    "entity_id": "input_select.remote_harmony",
-                                                    "option": "Plattenspieler"
+                                                    "entity_id": "remote.harmony",
+                                                    "activity": "Plattenspieler"
                                                 }
                                             },
                                             "icon": "mdi:disc",
@@ -1220,10 +1840,10 @@
                                             "type": "button",
                                             "tap_action": {
                                                 "action": "call-service",
-                                                "service": "input_select.select_option",
+                                                "service": "remote.turn_on",
                                                 "service_data": {
-                                                    "entity_id": "input_select.remote_harmony",
-                                                    "option": "Chromecast"
+                                                    "entity_id": "remote.harmony",
+                                                    "activity": "Chromecast"
                                                 }
                                             },
                                             "icon": "mdi:cast",
@@ -1234,10 +1854,10 @@
                                             "type": "button",
                                             "tap_action": {
                                                 "action": "call-service",
-                                                "service": "input_select.select_option",
+                                                "service": "remote.turn_on",
                                                 "service_data": {
-                                                    "entity_id": "input_select.remote_harmony",
-                                                    "option": "PC spiegeln"
+                                                    "entity_id": "remote.harmony",
+                                                    "activity": "PC spiegeln"
                                                 }
                                             },
                                             "icon": "mdi:laptop",
@@ -1248,28 +1868,14 @@
                                             "type": "button",
                                             "tap_action": {
                                                 "action": "call-service",
-                                                "service": "input_select.select_option",
+                                                "service": "remote.turn_on",
                                                 "service_data": {
-                                                    "entity_id": "input_select.remote_harmony",
-                                                    "option": "Xbox"
+                                                    "entity_id": "remote.harmony",
+                                                    "activity": "Xbox"
                                                 }
                                             },
                                             "icon": "mdi:gamepad",
                                             "name": "Xbox",
-                                            "show_name": false
-                                        },
-                                        {
-                                            "type": "button",
-                                            "tap_action": {
-                                                "action": "call-service",
-                                                "service": "input_select.select_option",
-                                                "service_data": {
-                                                    "entity_id": "input_select.remote_harmony",
-                                                    "option": "Klimaanlage"
-                                                }
-                                            },
-                                            "icon": "hass:snowflake",
-                                            "name": "Klimaanlage",
                                             "show_name": false
                                         }
                                     ]
